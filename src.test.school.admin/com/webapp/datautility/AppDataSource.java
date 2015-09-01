@@ -15,7 +15,7 @@ public class AppDataSource {
 	public static WebDriver scoWebDriv;
 	
 	//Web browser driver path
-	public static String browserDriverPath = "E:\\selenium.workingdir\\environment.req\\browser.driver.java\\chromedriver.exe";
+	public static String browserDriverPath = "C:\\Users\\kuldeepy\\Desktop\\sco\\sco\\driver\\chromedriver.exe";
 	
 	// URL access and login controller
 	public static String scoWebURL = "http://www.smartclassonline.com/site/home";
