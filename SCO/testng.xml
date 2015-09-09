@@ -1,0 +1,59 @@
+<suite name="Smart class online" verbose="3" thread-count="1" parallel="tests">
+ <test name="Test Execution On Chrome">
+     <parameter name="Browser" value="CH" />
+	     <classes>
+	              
+	            <class name="com.appmodule.testscript.Login_Script"></class> 
+	              <!--  <class name=""></class>  
+	                 <class name=""></class> 
+                    <class name=""></class>  
+                 <class name=""></class>  
+                 
+                   <class name=""></class> 
+                  <class name=""></class>
+                  <class name=""></class> 
+                  
+                    <class name=""></class> 
+                  <class name=""></class> -->
+	    </classes>
+  </test>
+  <test name="Test Execution On Firefox">
+     <parameter name="Browser" value="FF" />
+	     <classes>
+	                   <class name="com.appmodule.testscript.Login_Script"></class>
+	              <!-- <class name=""></class>
+                   <class name=""></class>
+                   <class name=""></class>
+               	<class name=""></class> 
+               	
+               	<class name=""></class> 
+                  <class name=""></class>
+                  <class name=""></class> 
+                  <class name=""></class> 
+                  <class name=""></class>    -->         
+	    </classes>
+  </test>
+  <test name="Test Execution On Internet Explorer">
+     <parameter name="Browser" value="IE" />
+	     <classes>
+	           <!--   <class name=""></class> 
+	            <class name=""> 
+	           
+	                 <methods>
+                      <include name="test_ValidateNewRouteplan" />
+                    </methods>   
+                    
+
+	          </class>-->
+              <class name="com.appmodule.testscript.Login_Script"></class> 
+                 <!-- <class name=""></class>
+                  <class name=""></class>
+                  
+                  <class name=""></class> 
+                  <class name=""></class>
+                  <class name=""></class>  
+                    <class name=""></class> 
+                  <class name=""></class>    -->
+	    </classes>
+  </test>
+</suite>

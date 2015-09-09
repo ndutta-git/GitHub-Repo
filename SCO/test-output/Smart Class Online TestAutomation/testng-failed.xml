@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="3" name="Failed suite [DmosOnDemand TestAutomation]" parallel="tests">
+  <parameter name="Browser" value="FF"/>
+  <test name="Test execution on Chrome(failed)" parallel="tests">
+    <parameter name="Browser" value="CH"/>
+    <classes>
+      <class name="com.Mymind.framework.demosondemand.script.dashboard.CreateAnEmailTemplets_Test">
+        <methods>
+          <include name="fn_initilizeapp"/>
+          <include name="Create_EmailTemplet"/>
+          <include name="fn_closedApp"/>
+        </methods>
+      </class> <!-- com.Mymind.framework.demosondemand.script.dashboard.CreateAnEmailTemplets_Test -->
+    </classes>
+  </test> <!-- Test execution on Chrome(failed) -->
+</suite> <!-- Failed suite [DmosOnDemand TestAutomation] -->
