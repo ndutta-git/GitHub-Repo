@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="14" passed="14">
+  <reporter-output>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/site/home Actual URL-http://www.fliplearn.com/site/home]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php Actual URL-http://www.fliplearn.com/index.php]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/user/Tdirectory Actual URL-http://www.fliplearn.com/index.php/user/Tdirectory]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/wallPosts Actual URL-http://www.fliplearn.com/index.php/wallPosts]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/messages Actual URL-http://www.fliplearn.com/index.php/messages]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/pictureGallery Actual URL-http://www.fliplearn.com/index.php/pictureGallery]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/events/index Actual URL-http://www.fliplearn.com/index.php/events/index]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/announcements/index Actual URL-http://www.fliplearn.com/index.php/announcements/index]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/user/directory Actual URL-http://www.fliplearn.com/index.php/user/directory]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/attendance/mark Actual URL-http://www.fliplearn.com/index.php/attendance/mark]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/attendance/reports Actual URL-http://www.fliplearn.com/index.php/attendance/reports]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/assignment/index Actual URL-http://www.fliplearn.com/index.php/assignment/index]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/ActivityReview/index Actual URL-http://www.fliplearn.com/index.php/ActivityReview/index?school=51&class=6252&section=6255]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/Marks/ClassWiseReport Actual URL-http://www.fliplearn.com/index.php/Marks/ClassWiseReport]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/healthStatus/index? Actual URL-http://www.fliplearn.com/index.php/healthStatus/index?school=51&class=6252&section=6255]]>
+    </line>
+    <line>
+      <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/subject/11? Actual URL-http://www.fliplearn.com/index.php/subject/11?level_id=11&sid=6253]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="173102" started-at="2016-01-04T06:12:41Z" finished-at="2016-01-04T06:15:34Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="173102" started-at="2016-01-04T06:12:41Z" finished-at="2016-01-04T06:15:34Z">
+      <class name="com.appmodule.testscript.Teacher_Login_Script">
+        <test-method status="PASS" signature="Login_validation()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Login_validation" is-config="true" duration-ms="65039" started-at="2016-01-04T11:42:41Z" finished-at="2016-01-04T11:43:46Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/site/home Actual URL-http://www.fliplearn.com/site/home]]>
+            </line>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php Actual URL-http://www.fliplearn.com/index.php]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Login_validation -->
+        <test-method status="PASS" signature="Click_on_Teacher()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Click_on_Teacher" duration-ms="7480" started-at="2016-01-04T11:43:46Z" finished-at="2016-01-04T11:43:54Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/user/Tdirectory Actual URL-http://www.fliplearn.com/index.php/user/Tdirectory]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Click_on_Teacher -->
+        <test-method status="PASS" signature="click_on_Wall()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="click_on_Wall" duration-ms="6875" started-at="2016-01-04T11:43:54Z" finished-at="2016-01-04T11:44:01Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/wallPosts Actual URL-http://www.fliplearn.com/index.php/wallPosts]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- click_on_Wall -->
+        <test-method status="PASS" signature="Click_on_Message()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Click_on_Message" duration-ms="4793" started-at="2016-01-04T11:44:01Z" finished-at="2016-01-04T11:44:06Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/messages Actual URL-http://www.fliplearn.com/index.php/messages]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Click_on_Message -->
+        <test-method status="PASS" signature="Click_on_Gallery()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Click_on_Gallery" duration-ms="6812" started-at="2016-01-04T11:44:06Z" finished-at="2016-01-04T11:44:12Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/pictureGallery Actual URL-http://www.fliplearn.com/index.php/pictureGallery]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Click_on_Gallery -->
+        <test-method status="PASS" signature="Clcik_on_Event()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Clcik_on_Event" duration-ms="14358" started-at="2016-01-04T11:44:12Z" finished-at="2016-01-04T11:44:27Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/events/index Actual URL-http://www.fliplearn.com/index.php/events/index]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Clcik_on_Event -->
+        <test-method status="PASS" signature="Click_on_Announcement()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Click_on_Announcement" duration-ms="4841" started-at="2016-01-04T11:44:27Z" finished-at="2016-01-04T11:44:32Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/announcements/index Actual URL-http://www.fliplearn.com/index.php/announcements/index]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Click_on_Announcement -->
+        <test-method status="PASS" signature="Click_on_Student()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Click_on_Student" duration-ms="5819" started-at="2016-01-04T11:44:32Z" finished-at="2016-01-04T11:44:37Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/user/directory Actual URL-http://www.fliplearn.com/index.php/user/directory]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Click_on_Student -->
+        <test-method status="PASS" signature="Click_on_AttendanceMarks()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Click_on_AttendanceMarks" duration-ms="6146" started-at="2016-01-04T11:44:37Z" finished-at="2016-01-04T11:44:44Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/attendance/mark Actual URL-http://www.fliplearn.com/index.php/attendance/mark]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Click_on_AttendanceMarks -->
+        <test-method status="PASS" signature="Click_on_AttendanceReport()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Click_on_AttendanceReport" duration-ms="5247" started-at="2016-01-04T11:44:44Z" finished-at="2016-01-04T11:44:49Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/attendance/reports Actual URL-http://www.fliplearn.com/index.php/attendance/reports]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Click_on_AttendanceReport -->
+        <test-method status="PASS" signature="Click_on_PerformAssignment()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Click_on_PerformAssignment" duration-ms="16778" started-at="2016-01-04T11:44:49Z" finished-at="2016-01-04T11:45:06Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/assignment/index Actual URL-http://www.fliplearn.com/index.php/assignment/index]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Click_on_PerformAssignment -->
+        <test-method status="PASS" signature="Click_on_MarksReview()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Click_on_MarksReview" duration-ms="5532" started-at="2016-01-04T11:45:06Z" finished-at="2016-01-04T11:45:11Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/ActivityReview/index Actual URL-http://www.fliplearn.com/index.php/ActivityReview/index?school=51&class=6252&section=6255]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Click_on_MarksReview -->
+        <test-method status="PASS" signature="Click_on_MarksreviewreportClasswise()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Click_on_MarksreviewreportClasswise" duration-ms="7496" started-at="2016-01-04T11:45:11Z" finished-at="2016-01-04T11:45:19Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/Marks/ClassWiseReport Actual URL-http://www.fliplearn.com/index.php/Marks/ClassWiseReport]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Click_on_MarksreviewreportClasswise -->
+        <test-method status="PASS" signature="Click_on_HealthStatus()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Click_on_HealthStatus" duration-ms="5219" started-at="2016-01-04T11:45:19Z" finished-at="2016-01-04T11:45:24Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/healthStatus/index? Actual URL-http://www.fliplearn.com/index.php/healthStatus/index?school=51&class=6252&section=6255]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Click_on_HealthStatus -->
+        <test-method status="PASS" signature="Click_on_Myclassroom_EnglishSub()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="Click_on_Myclassroom_EnglishSub" duration-ms="9483" started-at="2016-01-04T11:45:24Z" finished-at="2016-01-04T11:45:33Z">
+          <reporter-output>
+            <line>
+              <![CDATA[URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/subject/11? Actual URL-http://www.fliplearn.com/index.php/subject/11?level_id=11&sid=6253]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Click_on_Myclassroom_EnglishSub -->
+        <test-method status="PASS" signature="closebrowser()[pri:0, instance:com.appmodule.testscript.Teacher_Login_Script@34033bd0]" name="closebrowser" is-config="true" duration-ms="1100" started-at="2016-01-04T11:45:33Z" finished-at="2016-01-04T11:45:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closebrowser -->
+      </class> <!-- com.appmodule.testscript.Teacher_Login_Script -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

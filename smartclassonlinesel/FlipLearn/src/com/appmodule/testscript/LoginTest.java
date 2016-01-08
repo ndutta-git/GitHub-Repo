@@ -1,0 +1,58 @@
+//package com.appmodule.testscript;
+//
+//import java.io.IOException;
+//
+//import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+//import org.openqa.selenium.By;
+//import org.openqa.selenium.WebElement;
+//import org.testng.annotations.Test;
+//
+//import com.appmodule.Generic_method.Generic_class;
+//import com.appmodule.homepageclass.HomePage_PagecClass;
+//import com.appmodule.homepageclass.IndexHomePage_PageClass;
+//import com.appmodule.homepageclass.Loginpage_Pageclass;
+
+//@SuppressWarnings("unused")
+//public class LoginTest extends Generic_class{
+//	
+//	@SuppressWarnings({ "static-access" })
+//	@Test
+//	public static void logincheck() throws Exception{
+//		try{
+//		HomePage_PagecClass homepageobj=fn_OpenApp("CH", "http://www.fliplearn.com");
+//		Loginpage_Pageclass loginpageobj=homepageobj.clickonloginbutton();
+//		Thread.sleep(1000);
+//	fn_FetchExcelData1("TestData/LoginData/loginDATA.xlsx","Login_ID");
+//		int i;
+//		int loginid=AL.size();
+//		for(i=0;i<loginid;i++){
+//			System.out.println(AL.get(i));
+//			DriverObj.findElement(By.id("LoginForm_username")).clear();
+//		DriverObj.findElement((By.id("LoginForm_username"))).sendKeys(AL.get(i));
+//		DriverObj.findElement(By.id("LoginForm_password")).clear();
+//		DriverObj.findElement((By.id("LoginForm_password"))).sendKeys("123456");
+//		DriverObj.findElement(By.name("yt0")).click();
+//		Thread.sleep(2000);
+//		WebElement walllogo=IndexHomePage_PageClass.walllogo_onmain;
+//		if(walllogo.isDisplayed()){
+//			NavigationObj.fn_logout();
+//		}else {
+//			System.out.println("Login Faild");
+//		}
+//		
+//		      }
+//		}catch (Exception e) {
+//			// TODO: handle exception
+//			e.printStackTrace();
+//			fn_TakeSnapshot();
+//		     }
+//		}
+//		for(;;){
+//		System.out.println("welcome");
+//		}
+//	  }
+//	}
+
+	
+
+

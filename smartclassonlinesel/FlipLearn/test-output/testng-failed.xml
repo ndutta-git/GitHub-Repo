@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.appmodule.testscript.Parents_Login_Script">
+        <methods>
+          <include name="click_on_marks"/>
+          <include name="click_on_Announcement"/>
+          <include name="click_on_Events"/>
+          <include name="click_on_Dashboard"/>
+          <include name="Click_on_MathGuru"/>
+          <include name="click_on_Atteandance"/>
+          <include name="Login_validation"/>
+          <include name="click_on_message"/>
+          <include name="click_on_Teacher"/>
+          <include name="click_on_Gallery"/>
+          <include name="click_on_myclassroomArtSub"/>
+          <include name="Click_on_SmartclassEnglish"/>
+          <include name="click_on_wall"/>
+        </methods>
+      </class> <!-- com.appmodule.testscript.Parents_Login_Script -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

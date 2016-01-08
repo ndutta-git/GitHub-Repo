@@ -1,0 +1,36 @@
+package com.appmodule.testscript;
+
+import java.io.IOException;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import com.appmodule.Generic_method.Generic_class;
+import com.appmodule.homepageclass.HomePage_PagecClass;
+import com.appmodule.homepageclass.Loginpage_Pageclass;
+
+public class LoginTest extends Generic_class{
+	
+	@SuppressWarnings("unused")
+	@Test
+	public static void logincheck() throws Exception{
+		HomePage_PagecClass homepageobj=fn_OpenApp("CH", "http://www.fliplearn.com");
+		Loginpage_Pageclass loginpageobj=homepageobj.clickonloginbutton();
+		Thread.sleep(1000);
+		fn_FetchExcelData1("TestData/LoginData/loginDATA.xlsx","Login_ID");
+		int i;
+		int loginid=AL.size();
+		for(i=0;loginid<i;i++){
+			System.out.println(AL.get(i));
+		DriverObj.findElement((By.id("LoginForm_username"))).sendKeys(AL.get(i));
+		DriverObj.findElement((By.id("LoginForm_password"))).sendKeys("123456");
+		Thread.sleep(2000);
+		NavigationObj.fn_logout();
+		}
+		
+		
+	}
+	
+
+}
