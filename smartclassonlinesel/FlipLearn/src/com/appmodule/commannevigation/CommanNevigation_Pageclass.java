@@ -317,49 +317,49 @@ public class CommanNevigation_Pageclass extends Generic_class {
     	CommanNevigation_Pageclass commonnavigationpageobj=PageFactory.initElements(DriverObj, CommanNevigation_Pageclass.class);
     	return commonnavigationpageobj;
     }
-    public static Wall_PageClass mouseoverclickonwalllink() throws Exception, IOException{
+    public static Wall_PageClass clickonwalllink() throws Exception, IOException{
     	Main_Manu_Item=fn_GetText(share_menu);
     	Main_SubMainu_Item=fn_GetText(wall_liink);
     	fn_mouseOverClick(DriverObj, share_menu, wall_liink);
     	Wall_PageClass wallpageobj=PageFactory.initElements(DriverObj, Wall_PageClass.class);
     	return wallpageobj;
     }
-    public static Gallery_PageClass mouseoverclickongallerylink() throws Exception, IOException{
+    public static Gallery_PageClass clickongallerylink() throws Exception, IOException{
     	Main_Manu_Item=fn_GetText(share_menu);
     	Main_SubMainu_Item=fn_GetText(gallery_link);
     	fn_mouseOverClick(DriverObj, share_menu, gallery_link);
     	Gallery_PageClass gallerypageobj=PageFactory.initElements(DriverObj, Gallery_PageClass.class);
     	return gallerypageobj;
     }
-    public static Events_PageClass mouseoverclickonevent() throws Exception, IOException{
+    public static Events_PageClass clickonevent() throws Exception, IOException{
     	Main_Manu_Item=fn_GetText(share_menu);
     	Main_SubMainu_Item=fn_GetText(event_link);
     	fn_mouseOverClick(DriverObj, share_menu, event_link);
     	Events_PageClass eventpageobj=PageFactory.initElements(DriverObj, Events_PageClass.class);
     	return eventpageobj;
     }
-    public static Announement_PageClass mouseoverclickonannouncement() throws Exception, IOException{
+    public static Announement_PageClass clickonannouncement() throws Exception, IOException{
     	Main_Manu_Item=fn_GetText(share_menu);
     	Main_SubMainu_Item=fn_GetText(announcement_link);
     	fn_mouseOverClick(DriverObj, share_menu, announcement_link);
     	Announement_PageClass announcementpageobj=PageFactory.initElements(DriverObj, Announement_PageClass.class);
     	return announcementpageobj;
     }
-    public static Student_PageClass mouseoverclickonstudent() throws Exception, IOException{
+    public static Student_PageClass clickonstudent() throws Exception, IOException{
     	Main_Manu_Item=fn_GetText(share_menu);
     	Main_SubMainu_Item=fn_GetText(announcement_link);
     	fn_mouseOverClick(DriverObj, share_menu, student_link);
     	Student_PageClass studentpageobj=PageFactory.initElements(DriverObj, Student_PageClass.class);
     	return studentpageobj;
     }
-    public static Teacher_PageClass mouseoverclickonTeacher() throws Exception, IOException{
+    public static Teacher_PageClass clickonTeacher() throws Exception, IOException{
     	Main_Manu_Item=fn_GetText(share_menu);
     	Main_SubMainu_Item=fn_GetText(teacher_link);
     	fn_mouseOverClick(DriverObj, share_menu, teacher_link);
     	Teacher_PageClass teacherpageobj=PageFactory.initElements(DriverObj, Teacher_PageClass.class);
     	return teacherpageobj;
     }
-    public static Message_Pageclass mouseoverclickonmessage() throws Exception, IOException{
+    public static Message_Pageclass clickonmessage() throws Exception, IOException{
     	Main_Manu_Item=fn_GetText(share_menu);
     	Main_SubMainu_Item=fn_GetText(message_link);
     	fn_mouseOverClick(DriverObj, share_menu, message_link);

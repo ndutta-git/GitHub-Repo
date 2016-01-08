@@ -1,0 +1,127 @@
+<suite name="FlipLearn" verbose="3" thread-count="1" parallel="tests">
+ <test name="Fliplearn Test Execution On Chrome">
+     <parameter name="Browser" value="CH" />
+	     <classes>
+	              
+	                <class name="com.appmodule.testscript.Student_Login_Script">
+	               <methods>
+	                <include name="Login_validation" />
+                        <include name="click_walllink" />
+                         <include name="click_message" />
+                          <include name="click_gallery" />
+                          <include name="click_event" />
+                          <include name="click_announcement" />
+                          <include name="click_attendance" />
+                          <include name="click_marks" />
+                          <include name="click_dashboard" />
+                          <include name="click_myclassroom_Art_Sub" />
+                          <include name="click_smartclass_english" />
+                          <include name="Click_Mathguru" />
+                          <include name="closebrowser" />
+                    </methods>
+                    </class>
+	                  <class name="com.appmodule.testscript.Teacher_Login_Script">
+	                  <methods>
+	                <include name="Login_validation" />
+                        <include name="click_on_Wall" />
+                         <include name="Click_on_Message" />
+                          <include name="Click_on_Gallery" />
+                          <include name="Clcik_on_Event" />
+                          <include name="Click_on_Announcement" />
+                          <include name="Click_on_Student" />
+                          <include name="Click_on_Teacher" />
+                          <include name="Click_on_AttendanceMarks" />
+                          <include name="Click_on_AttendanceReport" />
+                          <include name="Click_on_PerformAssignment" />
+                          <include name="Click_on_MarksreviewreportClasswise" />
+                          <include name="Click_on_HealthStatus"/>
+                          <include name="Click_on_Myclassroom_EnglishSub" />
+                    </methods>
+	                 </class>
+                       <class name="com.appmodule.testscript.Parents_Login_Script">
+                          <methods>
+	                <include name="Login_validation" />
+                        <include name="click_on_wall" />
+                         <include name="click_on_message" />
+                          <include name="click_on_Gallery" />
+                          <include name="click_on_Events" />
+                          <include name="click_on_Announcement" />
+                          <include name="click_on_Student" />
+                          <include name="click_on_Teacher" />
+                          <include name="click_on_Atteandance" />
+                          <include name="click_on_marks" />
+                          <include name="click_on_Dashboard" />
+                          <include name="click_on_myclassroomArtSub" />
+                          <include name="Click_on_SmartclassEnglish"/>
+                          <include name="Click_on_MathGuru" />
+                    </methods> 
+                          </class>  
+                      <class name="com.appmodule.testscript.Admin_Login_Script"></class>  
+                      <method>
+                          <include name="Click_on_Wall" />
+                         <include name="Click_on_Message" />
+                          <include name="Click_on_Gallery" />
+                          <include name="Click_on_Events" />
+                          <include name="Click_on_Announcement" />
+                          <include name="Click_on_Student" />
+                          <include name="Click_on_Teacher" />
+                          <include name="Click_on_Attendance" />
+                          <include name="Click_on_ManageUser" />
+                          <include name="Click_on_RollNumberSetup" />
+                          <include name="Click_on_BulkSection_SetUP" />
+                          <include name="Click_on_Competency"/>
+                          <include name="Click_on_Grades" />
+                          <include name="Click_on_Evaluation" />
+                          <include name="Click_on_BatchReport" />
+                          </method>
+                          </class> 
+               <!--  <class name=""></class>  
+                 
+                   <class name=""></class> 
+                  <class name=""></class>
+                  <class name=""></class> 
+                  
+                    <class name=""></class> 
+                  <class name=""></class> -->
+	    </classes>
+  </test>
+  <test name="Test Execution On Firefox">
+     <parameter name="Browser" value="FF" />
+	  <!--   <classes>
+	                   <class name=""></class>
+	               <class name=""></class>
+                   <class name=""></class>
+                   <class name=""></class>
+               	<class name=""></class> 
+               	
+               	<class name=""></class> 
+                  <class name=""></class>
+                  <class name=""></class> 
+                  <class name=""></class> 
+                  <class name=""></class>          
+	    </classes> -->  
+  </test>
+  <test name="Test Execution On Internet Explorer">
+     <parameter name="Browser" value="IE" />
+	    <!--   <classes>
+	            <class name=""></class> 
+	            <class name=""> 
+	           
+	                 <methods>
+                      <include name="test_ValidateNewRouteplan" />
+                    </methods>   
+                    
+
+	          </class>
+              <class name=""></class> 
+                 <class name=""></class>
+                  <class name=""></class>
+                  
+                  <class name=""></class> 
+                  <class name=""></class>
+                  <class name=""></class>  
+                    <class name=""></class> 
+                  <class name=""></class>   
+	    </classes> -->
+  </test>
+</suite>

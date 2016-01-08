@@ -29,7 +29,7 @@ public class Admin_Login_Script extends Generic_class{
 		TestDataSheetName="URL";
 		Login_Role="Admin";
 		ResultSheetPath="FlipLearn/Results/Result.xlsx";
-		ResultFolder="C:/Users/ykuld_000/Desktop/smartclassonlinesel/FlipLearn/Results";
+		ResultFolder="E:/Git-Repository/scoselenium/smartclassonlinesel/FlipLearn/Results";
 	    HomePage_PagecClass	loginpageobj=fn_OpenApp("CH", "http://www.fliplearn.com");
 	    fn_FetchExcelData(1);
 	    fn_GetPageLoadTime(NavigationObj.Fliplearnlogo);
@@ -53,49 +53,49 @@ public class Admin_Login_Script extends Generic_class{
     @SuppressWarnings("static-access")
 	@Test(priority=1)
 	public static void Click_on_Wall() throws IOException, Exception{
-	NavigationObj.mouseoverclickonwalllink();
+	NavigationObj.clickonwalllink();
 	fn_GetPageLoadTime(IndexHomePage_PageClass.walllogo_onmain);
 	verifyUrl("WallPage_Url", 1);
     }
     @SuppressWarnings("static-access")
 	@Test(priority=2)
     public static void Click_on_Message() throws IOException, Exception{
-    	NavigationObj.mouseoverclickonmessage();
+    	NavigationObj.clickonmessage();
     	fn_GetPageLoadTime(NavigationObj.MessageLogo);
     	verifyUrl("MessagePage_Url", 1);
     }
     @SuppressWarnings("static-access")
 	@Test(priority=3)
     public static void Click_on_Gallery() throws IOException, Exception{
-    	NavigationObj.mouseoverclickongallerylink();
+    	NavigationObj.clickongallerylink();
     	fn_GetPageLoadTime(NavigationObj.Gallery);
     	verifyUrl("GalleryPage_Url", 1);
     }
     @SuppressWarnings("static-access")
 	@Test(priority=4)
     public static void Click_on_Events() throws IOException, Exception{
-    	NavigationObj.mouseoverclickonevent();
+    	NavigationObj.clickonevent();
     	fn_GetPageLoadTime(NavigationObj.Events);
     	verifyUrl("EventPage_Url", 1);
     }
     @SuppressWarnings("static-access")
 	@Test(priority=5)
     public static void Click_on_Announcement() throws IOException, Exception{
-    	NavigationObj.mouseoverclickonannouncement();
+    	NavigationObj.clickonannouncement();
     	fn_GetPageLoadTime(NavigationObj.Announcements);
     	verifyUrl("Adminannouncement_URL", 1);
     }
     @SuppressWarnings("static-access")
 	@Test(priority=6)
     public static void Click_on_Student() throws IOException, Exception{
-    	NavigationObj.mouseoverclickonstudent();
+    	NavigationObj.clickonstudent();
     	fn_GetPageLoadTime(NavigationObj.Students);
     	verifyUrl("StudentPage_URL", 1);
     }
     @SuppressWarnings("static-access")
 	@Test(priority=7)
     public static void Click_on_Teacher() throws IOException, Exception{
-    	NavigationObj.mouseoverclickonTeacher();
+    	NavigationObj.clickonTeacher();
     	fn_GetPageLoadTime(NavigationObj.Teachers);
     	verifyUrl("TeacherPage_URL", 1);
     }

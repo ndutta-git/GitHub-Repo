@@ -20,7 +20,7 @@
                           <include name="closebrowser" />
                     </methods>
                     </class>
-	               <!--   <class name="com.appmodule.testscript.Teacher_Login_Script">
+	                  <class name="com.appmodule.testscript.Teacher_Login_Script">
 	                  <methods>
 	                <include name="Login_validation" />
                         <include name="click_on_Wall" />
@@ -37,8 +37,8 @@
                           <include name="Click_on_HealthStatus"/>
                           <include name="Click_on_Myclassroom_EnglishSub" />
                     </methods>
-	                 </class> -->
-                     <!--      <class name="com.appmodule.testscript.Parents_Login_Script">
+	                 </class>
+                       <class name="com.appmodule.testscript.Parents_Login_Script">
                           <methods>
 	                <include name="Login_validation" />
                         <include name="click_on_wall" />
@@ -55,18 +55,29 @@
                           <include name="Click_on_SmartclassEnglish"/>
                           <include name="Click_on_MathGuru" />
                     </methods> 
-                          </class>  --> 
-                   <!--   <class name=""></class>  
-                 <class name=""></class>  
-                 
-                   <class name=""></class> 
-                  <class name=""></class>
-                  <class name=""></class> 
-                  
-                    <class name=""></class> 
-                  <class name=""></class> -->
+                          </class>  
+                      <class name="com.appmodule.testscript.Admin_Login_Script"></class>  
+                      <method>
+                          <include name="Click_on_Wall" />
+                         <include name="Click_on_Message" />
+                          <include name="Click_on_Gallery" />
+                          <include name="Click_on_Events" />
+                          <include name="Click_on_Announcement" />
+                          <include name="Click_on_Student" />
+                          <include name="Click_on_Teacher" />
+                          <include name="Click_on_Attendance" />
+                          <include name="Click_on_ManageUser" />
+                          <include name="Click_on_RollNumberSetup" />
+                          <include name="Click_on_BulkSection_SetUP" />
+                          <include name="Click_on_Competency"/>
+                          <include name="Click_on_Grades" />
+                          <include name="Click_on_Evaluation" />
+                          <include name="Click_on_BatchReport" />
+                          </method>
+                         
+                
 	    </classes>
-  </test>
+  </test> 
   <test name="Test Execution On Firefox">
      <parameter name="Browser" value="FF" />
 	  <!--   <classes>

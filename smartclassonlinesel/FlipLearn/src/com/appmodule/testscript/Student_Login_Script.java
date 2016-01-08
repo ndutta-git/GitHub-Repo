@@ -36,7 +36,7 @@ public static void Login_validation() throws Exception{
 	TestDataSheetName="URL";
 	Login_Role="Student";
 	ResultSheetPath="FlipLearn/Results/Result.xlsx";
-	ResultFolder="C:/Users/ykuld_000/Desktop/smartclassonlinesel/FlipLearn/Results";
+	ResultFolder="E:/Git-Repository/scoselenium/smartclassonlinesel/FlipLearn/Results";
 	HomePage_PagecClass	loginobj=fn_OpenApp("CH", "http://www.fliplearn.com");
      fn_FetchExcelData(1);
      fn_GetPageLoadTime(NavigationObj.Fliplearnlogo);
