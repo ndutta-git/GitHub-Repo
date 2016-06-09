@@ -1,0 +1,76 @@
+package com.appmodule.testscript;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.appmodule.Generic_method.Generic_class;
+
+public class Book_Id_test {
+			
+	public static int isbndata;
+	public static String booktext;
+	public class LoginTest extends Generic_class{
+	
+	
+		@SuppressWarnings("unused")
+		@Test
+	public void logincheck() throws Exception{
+			try{
+			fn_OpenApp("CH", "http://apptesting.smartclassonline.com/shop/products/index");
+			fn_FetchExcelData1("TestData/Book_details.xlsx", "Sheet1");
+			WebElement booklink=DriverObj.findElement(By.id("seller_138"));
+			List<WebElement> booktagname=booklink.findElements(By.tagName("a"));
+			Iterator<WebElement> tagname=booktagname.iterator();
+			while(tagname.hasNext()){
+			WebElement	tangname1=tagname.next();
+			tangname1.click();
+			Thread.sleep(2000);
+			DriverObj.findElement(By.xpath("//div[@id='classes_listGroup']/button")).click();
+			WebElement classlist=DriverObj.findElement(By.xpath("//ul[@id='classes_list']"));
+			List<WebElement> classname=classlist.findElements(By.tagName("a"));
+			Iterator<WebElement> classitr=classname.iterator();
+			while(classitr.hasNext()){
+			WebElement classlistitr1=classitr.next();
+			classlistitr1.click();
+			Thread.sleep(3000);
+			DriverObj.findElement(By.xpath("//div[@id='yw0']//div[2]//div/a")).click();
+			Thread.sleep(2000);
+			WebElement portfoolioitem=DriverObj.findElement(By.xpath("//div[@id='accordion_388']/div/div"));
+			List<WebElement> isbnparegraph=portfoolioitem.findElements(By.tagName("p"));
+			Iterator<WebElement> ISBNTEXT=isbnparegraph.iterator();
+			while(ISBNTEXT.hasNext()){
+			WebElement ISBNTEXT1=ISBNTEXT.next();
+			String ISBNTEXTGET=ISBNTEXT1.getText();
+			System.out.println(ISBNTEXTGET);
+			String[] ISBNPART=ISBNTEXTGET.split("ISBN:");
+			String ISBNPART1=ISBNPART[0];
+			String ISBNPART2=ISBNPART[1];
+			System.out.println(ISBNPART2);
+			Iterator<String> ITRVALUE=AL.iterator();
+            while(ITRVALUE.hasNext()){
+            String EXCELISBNNAME=ITRVALUE.next();
+            System.out.println(EXCELISBNNAME);
+            if(ISBNPART2.equals(EXCELISBNNAME)){
+            	System.out.println("ISBN NAME MATCHED");
+            	break;
+            }
+            else{
+            	System.out.println("ISBN NAME IS NNOT MATCHED");
+            }
+            }
+			}
+			 }
+			}
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		
+		}
+	}
+}
+
+	  

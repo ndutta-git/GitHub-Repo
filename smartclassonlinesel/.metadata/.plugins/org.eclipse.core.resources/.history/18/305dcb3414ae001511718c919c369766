@@ -1,9 +1,0 @@
-package com.appmodule.testscript;
-
-public class Principal_Login_Script {
-
-	public static void main(String[] args) {
-	
-	}
-
-}

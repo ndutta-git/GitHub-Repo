@@ -1,0 +1,82 @@
+package com.appmodule.testscript;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.appmodule.Generic_method.Generic_class;
+import com.appmodule.homepageclass.HomePage_PagecClass;
+
+public class Book_Id_test {
+			
+	public static int isbndata;
+	public static String booktext;
+	public class LoginTest extends Generic_class{
+	
+	
+		@SuppressWarnings("unused")
+		@Test
+	public void logincheck() throws Exception{
+		try{
+		HomePage_PagecClass homepageobj=fn_OpenApp("CH", "http://apptesting.smartclassonline.com/shop/products/index");
+		
+		Thread.sleep(1000);
+		fn_FetchExcelData1("TestData/Book_details.xlsx","ISBN");
+	    int i;
+		int loginid=AL.size();
+	   for(i=0;i<loginid;i++){
+		   String	excelisbn=	AL.get(i);
+	   WebElement myElements = DriverObj.findElement(By.xpath("//ul[@id='changeCategory']/ul[4]/li"));
+	  java.util.List<WebElement> myelement1=myElements.findElements(By.xpath("//ul[@id='changeCategory']/ul[4]/li/a"));
+	  
+	   int	elemenetsize=	myelement1.size();
+	   int j;
+	   for(j=0;j<elemenetsize;j++){
+		String linktext=   myelement1.get(j).getText();
+		System.out.println("School name"  +linktext);
+	   myelement1.get(j).click();
+	  Thread.sleep(3000);
+	   DriverObj.findElement(By.xpath("//div[@id='classes_listGroup']/button")).click();
+	   WebElement xyz=DriverObj.findElement(By.xpath("//ul[@id='classes_list']/li"));
+	  java.util.List<WebElement> classname=xyz.findElements(By.xpath("//ul[@id='classes_list']/li/a"));  
+	    int classzize=classname.size();
+	    int x;
+	    for(x=0;x<elemenetsize;x++){
+	   String licktext= 	classname.get(x).getText();
+	   System.out.println("link text"  +licktext);
+	    	classname.get(x).click();
+	 	  Thread.sleep(3000);
+	        	 
+	    	
+		DriverObj.findElement(By.xpath("//a[text()='Complete Book Set for Pre-Nursery-Developing Roots']")).click();
+			 Thread.sleep(2000);	
+			WebElement divobj= DriverObj.findElement(By.xpath("//div[@class='portfolio masonry isotope']"));
+			WebElement divobj1	=divobj.findElement(By.xpath("//div[@class='portfolio masonry isotope']/div"));
+			java.util.List<WebElement> bookisbntext=divobj1.findElements(By.xpath("//div[@class='portfolio masonry isotope']/div/div/div/p"));
+		    int z;
+				
+		    for(z=0;z<elemenetsize;z++){
+		    	
+		    String bookisbnname=	bookisbntext.get(x).getText();
+		    int booknamelength=bookisbnname.length();
+		    String[]  Parts=bookisbnname.split("ISBN:");
+            String part1=Parts[0];
+            String part2=Parts[1];
+            System.out.printf("Part1" +part1 ,"part 2" +part2);
+		    	System.out.println("book Isbn name" +bookisbnname );
+		 	  Thread.sleep(3000);	
+		     String	excelisbn1=	AL.get(i);
+		     Assert.assertEquals(part2, excelisbn1);
+			}
+		
+		}
+	 }
+	}
+   }
+		catch(Exception e){
+			e.printStackTrace();
+		}
+ }
+}
+}

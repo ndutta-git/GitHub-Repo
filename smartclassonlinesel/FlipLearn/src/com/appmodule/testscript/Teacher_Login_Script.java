@@ -10,7 +10,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.appmodule.Generic_method.Generic_class;
-import com.appmodule.Learn_Pageclass.Learn_PageClass;
 import com.appmodule.homepageclass.HomePage_PagecClass;
 import com.appmodule.homepageclass.IndexHomePage_PageClass;
 import com.appmodule.homepageclass.Loginpage_Pageclass;
@@ -138,11 +137,6 @@ public static void Click_on_HealthStatus() throws Exception, IOException{
 	fn_GetPageLoadTime(NavigationObj.health_status);
 	verifyUrl("HealthSatatusPage_URL", 1);
 }
-@SuppressWarnings("static-access")
-@Test(priority=13)
-public static void Click_on_Myclassroom_EnglishSub() throws IOException, Exception{
-	Learn_PageClass learnpageobj=PageFactory.initElements(DriverObj, Learn_PageClass.class);
-	learnpageobj.click_on_Myclassroom_EnglishSub();
-	verifyUrl("Myclassroom_English_Sub", 1);
-}
+
+
 }

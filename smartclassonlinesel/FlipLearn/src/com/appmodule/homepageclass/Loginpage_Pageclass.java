@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.appmodule.Generic_method.Generic_class;
 
 public class Loginpage_Pageclass extends Generic_class{
+	
 	@FindBy(id="LoginForm_username")
 	public static WebElement username;
 	
@@ -25,8 +26,8 @@ public class Loginpage_Pageclass extends Generic_class{
 	
 	
 	public  IndexHomePage_PageClass Student_Valid_Login() throws IOException, InterruptedException, Exception{
-		TestDataPath="TestData/LoginData/Student_login_Data.xlsx";
-		TestDataSheetName="logindata";
+		TestDataPath="TestData/LoginData/Live_user_logindata.xlsx";
+		TestDataSheetName="Student_login_Data";
 		 fn_FetchExcelData(1);
 		 Username= (String) testData_HM.get("UserName_Ed");
 	     Login_Role= (String) testData_HM.get("User_Role_ED");
@@ -40,8 +41,8 @@ public class Loginpage_Pageclass extends Generic_class{
 		
 	}
 	public IndexHomePage_PageClass teacher_valid_login() throws IOException, InterruptedException, InvalidFormatException{
-		TestDataPath="TestData/LoginData/teacher_login_Data.xlsx";
-		TestDataSheetName="logindata";
+		TestDataPath="TestData/LoginData/Live_user_logindata.xlsx";
+		TestDataSheetName="Teacher_login_Data";
 		fn_FetchExcelData(1);
 		 Username= (String) testData_HM.get("UserName_Ed");
 		 Login_Role= (String) testData_HM.get("User_Role_ED");
@@ -54,7 +55,7 @@ public class Loginpage_Pageclass extends Generic_class{
 		 return indexhomepage;
 	}
 	public IndexHomePage_PageClass admin_valid_login() throws IOException, InterruptedException, InvalidFormatException{
-		TestDataPath="TestData/LoginData/admin_login_Data.xlsx";
+		TestDataPath="TestData/LoginData/Live_user_logindata.xlsx";
 		TestDataSheetName="Admin_login_Data";
 		fn_FetchExcelData(1);
 		 Username= (String) testData_HM.get("UserName_Ed");
@@ -68,8 +69,8 @@ public class Loginpage_Pageclass extends Generic_class{
 		 return indexhomepage;
 	}
 	public IndexHomePage_PageClass parents_valid_login() throws IOException, InterruptedException, InvalidFormatException{
-		TestDataPath="TestData/LoginData/parents_login_Data.xlsx";
-		TestDataSheetName="logindata";
+		TestDataPath="TestData/LoginData/Live_user_logindata.xlsx";
+		TestDataSheetName="Parent_login_Data";
 		fn_FetchExcelData(1);
 		 Username= (String) testData_HM.get("UserName_Ed");
 		 Login_Role= (String) testData_HM.get("User_Role_ED");
@@ -82,7 +83,7 @@ public class Loginpage_Pageclass extends Generic_class{
 		 return indexhomepage;
 	}
 	public static IndexHomePage_PageClass Principal_login() throws IOException, InvalidFormatException, InterruptedException{
-		TestDataPath="TestData/LoginData/admin_login_Data.xlsx";
+		TestDataPath="TestData/LoginData/Live_user_logindata.xlsx";
 	    TestDataSheetName="Principal_login_Data";
 	    fn_FetchExcelData(1);
 		 Username= (String) testData_HM.get("UserName_Ed");

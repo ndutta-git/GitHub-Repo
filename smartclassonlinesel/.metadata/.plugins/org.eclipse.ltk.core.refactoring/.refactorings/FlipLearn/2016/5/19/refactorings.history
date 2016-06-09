@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.appmodule.testscript.PSBB_Book_Test&apos; to &apos;PSBB_Book_orderTest&apos;&#x0D;&#x0A;- Original project: &apos;FlipLearn&apos;&#x0D;&#x0A;- Original element: &apos;com.appmodule.testscript.PSBB_Book_Test&apos;&#x0D;&#x0A;- Renamed element: &apos;com.appmodule.testscript.PSBB_Book_orderTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;PSBB_Book_Test&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.appmodule.testscript{PSBB_Book_Test.java[PSBB_Book_Test" matchStrategy="1" name="PSBB_Book_orderTest" qualified="false" references="true" similarDeclarations="false" stamp="1462515746410" textual="false" version="1.0"/>
+</session>

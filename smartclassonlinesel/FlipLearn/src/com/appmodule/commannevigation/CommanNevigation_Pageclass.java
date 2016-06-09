@@ -182,7 +182,6 @@ public class CommanNevigation_Pageclass extends Generic_class {
 	
 	
 	
-	
 /***************************************************************Share_Menu_Element************************************************/
 	
 	@FindBy(xpath="//a[@href='/index.php/wallPosts']")
@@ -223,7 +222,7 @@ public class CommanNevigation_Pageclass extends Generic_class {
 	@FindBy(xpath="//a[@href='/index.php/attendance/mark']")
 	public static WebElement Attendancemarks;
 	
-	@FindBy(css="a[href='/index.php/Dashboard']")
+	@FindBy(xpath="//a[@href='/index.php/Dashboard']")
 	public static WebElement dashboard_link;
 	
 	@FindBy(css="a[href='/index.php/SelfAwareness/admin']")
@@ -261,6 +260,13 @@ public class CommanNevigation_Pageclass extends Generic_class {
     @FindBy(xpath="//li[@class='topmenu']/a[text()='Smartclass']")
     public static WebElement smartclass;
     
+    @FindBy(xpath="//ul[@id='css3menu1']/li[2]/ul/li[4]")
+    public static WebElement Textbook;
+    
+    @FindBy(xpath="//a[@href='/index.php/mathguru/index?level_id=10']")
+    public static WebElement mathguru;
+    
+   
 /********************************************Learn_Subject_Page_Logo*************************************************************/
     
     @FindBy(xpath="//div[@class='breadcrumbs breadcrumb sub_title']")

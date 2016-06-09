@@ -1,0 +1,44 @@
+package com.appmodule.testscript;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.appmodule.Generic_method.Generic_class;
+import com.appmodule.homepageclass.HomePage_PagecClass;
+
+public class Book_Id_test {
+			
+	public static int isbndata;
+	public static String booktext;
+	public class LoginTest extends Generic_class{
+	
+	
+		@SuppressWarnings("unused")
+		@Test
+	public void logincheck() throws Exception{
+			try{
+			fn_OpenApp("CH", "http://apptesting.smartclassonline.com/shop/products/index");
+			fn_FetchExcelData1("TestData", "Book_details.xlsx");
+			WebElement booklink=DriverObj.findElement(By.id("seller_138"));
+			List<WebElement> booktagname=booklink.findElements(By.tagName("a"));
+			Iterator<WebElement> tagname=booktagname.iterator();
+			while(tagname.hasNext()){
+			WebElement	tangname1=tagname.next();
+			tangname1.click();
+			Thread.sleep(2000);
+			DriverObj.findElement(By.xpath("//div[@id='classes_listGroup']/button")).click();
+			Thread.sleep(3000);
+			 }
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		
+		}
+	}
+}
+
+	  

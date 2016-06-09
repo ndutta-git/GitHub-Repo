@@ -15,6 +15,7 @@ import com.appmodule.homepageclass.IndexHomePage_PageClass;
 import com.appmodule.homepageclass.Loginpage_Pageclass;
 import com.appmodule.perform_pageclass.Marks_PageClass;
 
+@SuppressWarnings("unused")
 public class Parents_Login_Script extends Generic_class{
 
 	@SuppressWarnings("rawtypes")
@@ -95,14 +96,7 @@ public static void click_on_Atteandance() throws Exception, IOException{
 	fn_GetPageLoadTime(NavigationObj.attendance_report);
 	verifyUrl("AttendancePage_Url", 1);
 }
-@SuppressWarnings("static-access")
-@Test(priority=8)
-public static void click_on_marks() throws Exception, IOException{
-	Marks_PageClass markspageobj=PageFactory.initElements(DriverObj, Marks_PageClass.class);
-	markspageobj.Click_on_Marks();
-	fn_GetPageLoadTime(NavigationObj.Parent_marks_link);
-	verifyUrl("MarksPage_URL", 1);
-}
+
 @SuppressWarnings("static-access")
 @Test(priority=9)
 public static void click_on_Dashboard() throws Exception, IOException{
@@ -110,22 +104,7 @@ public static void click_on_Dashboard() throws Exception, IOException{
 	fn_GetPageLoadTime(NavigationObj.Smartclass_Dashboard);
 	verifyUrl("DashboardPage_URL", 1);
 }
-@SuppressWarnings("static-access")
-@Test(priority=10)
-public static void click_on_myclassroomArtSub() throws IOException, Exception{
-	Learn_PageClass learnpageobj=PageFactory.initElements(DriverObj, Learn_PageClass.class);
-	learnpageobj.Click_on_MyclassroomArt();
-	fn_GetPageLoadTime(NavigationObj.Art_txt_logo);
-	verifyUrl("Pmyclassroom_Art_URL", 1);
-}
-@SuppressWarnings("static-access")
-@Test(priority=11)
-public static void Click_on_SmartclassEnglish() throws IOException, Exception{
-	Learn_PageClass learnpageobj=PageFactory.initElements(DriverObj, Learn_PageClass.class);
-	learnpageobj.Click_on_parentsSmartclassEnglish();
-	fn_GetPageLoadTime(NavigationObj.english_txt_logo);
-	verifyUrl("PSmartclassEnglish_URL", 1);
-}
+
 @SuppressWarnings("static-access")
 @Test(priority=12)
 public static void Click_on_MathGuru() throws IOException, Exception{

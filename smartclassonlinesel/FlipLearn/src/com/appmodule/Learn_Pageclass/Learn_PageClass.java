@@ -20,8 +20,15 @@ public class Learn_PageClass extends Generic_class{
 	public static WebElement smartclass;
 	
 
-	@FindBy(xpath="//ul[@id='css3menu1']//a[text()='Mathguru']")
+	@FindBy(xpath="//a[@href='/index.php/mathguru/index?level_id=10']")
 	public static WebElement mathguru;
+	
+	 @FindBy(xpath="//ul[@id='css3menu1']/li[2]/ul/li[5]/a")
+	 public static WebElement eduinsight;
+	    
+	    
+	 @FindBy(xpath="//ul[@id='css3menu1']/li[2]/ul/li[5]//ul/li/a")
+	 public static WebElement eduinsight_test_class;
 	
 /******************************************Myclassroom_menu_option**********************************************************/
 	

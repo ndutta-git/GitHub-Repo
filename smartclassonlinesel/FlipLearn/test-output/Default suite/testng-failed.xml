@@ -3,26 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.appmodule.testscript.Admin_Login_Script">
+      <class name="com.appmodule.testscript.PSBB_Book_orderTest">
         <methods>
-          <include name="Click_on_RollNumberSetup"/>
-          <include name="Click_on_Announcement"/>
-          <include name="Click_on_Gallery"/>
-          <include name="Click_on_Grades"/>
-          <include name="Click_on_Evaluation"/>
-          <include name="Click_on_Attendance"/>
-          <include name="Click_on_Wall"/>
-          <include name="Click_on_Student"/>
-          <include name="Click_on_Events"/>
-          <include name="Click_on_Message"/>
-          <include name="Click_on_Competency"/>
-          <include name="loginapp"/>
-          <include name="Click_on_BulkSection_SetUP"/>
-          <include name="Click_on_ManageUser"/>
-          <include name="Click_on_BatchReport"/>
-          <include name="Click_on_Teacher"/>
+          <include name="Fill_form"/>
+          <include name="openPSBBM"/>
         </methods>
-      </class> <!-- com.appmodule.testscript.Admin_Login_Script -->
+      </class> <!-- com.appmodule.testscript.PSBB_Book_orderTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

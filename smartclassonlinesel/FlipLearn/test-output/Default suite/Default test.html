@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>15/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jan 08 14:26:11 IST 2016</td>
+<td>Started on:</td><td>Mon May 09 11:10:51 IST 2016</td>
 </tr>
-<tr><td>Total time:</td><td>136 seconds (136923 ms)</td>
+<tr><td>Total time:</td><td>57 seconds (57769 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,193 +67,86 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_Announcement()'><b>Click_on_Announcement</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-1770070706" onClick='toggleBox("Output-1770070706", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1770070706" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1770070706">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/announcements/index Actual URL-http://www.fliplearn.com/index.php/announcements/index<br/>
-</div>
-</td>
-<td></td>
-<td>4</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
+<td title='com.appmodule.testscript.PSBB_Book_orderTest.openPSBBM()'><b>openPSBBM</b><br>Test class: com.appmodule.testscript.PSBB_Book_orderTest</td>
+<td><div><pre>java.io.FileNotFoundException: TestData\LoginData\PSBB_shcool_data.xlsx (The system cannot find the file specified)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at com.appmodule.Generic_method.Generic_class.fn_FetchExcelData(Generic_class.java:540)
+	at com.appmodule.testscript.PSBB_Book_orderTest.openPSBBM(PSBB_Book_orderTest.java:40)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:641)
+	at org.testng.TestRunner.run(TestRunner.java:609)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:207)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:178)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1412322831", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1412322831'><pre>java.io.FileNotFoundException: TestData\LoginData\PSBB_shcool_data.xlsx (The system cannot find the file specified)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
+	at com.appmodule.Generic_method.Generic_class.fn_FetchExcelData(Generic_class.java:540)
+	at com.appmodule.testscript.PSBB_Book_orderTest.openPSBBM(PSBB_Book_orderTest.java:40)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:641)
+	at org.testng.TestRunner.run(TestRunner.java:609)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:207)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:178)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_Attendance()'><b>Click_on_Attendance</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-50072771" onClick='toggleBox("Output-50072771", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-50072771" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-50072771">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/attendance/mark Actual URL-http://www.fliplearn.com/index.php/attendance/mark<br/>
-</div>
-</td>
+<td title='com.appmodule.testscript.PSBB_Book_orderTest.Fill_form()'><b>Fill_form</b><br>Test class: com.appmodule.testscript.PSBB_Book_orderTest</td>
 <td></td>
-<td>4</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_BatchReport()'><b>Click_on_BatchReport</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-475394679" onClick='toggleBox("Output-475394679", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-475394679" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-475394679">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/Batchreports/admin Actual URL-http://www.fliplearn.com/index.php/Batchreports/admin<br/>
-</div>
-</td>
-<td></td>
-<td>6</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_BulkSection_SetUP()'><b>Click_on_BulkSection_SetUP</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-747158012" onClick='toggleBox("Output-747158012", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-747158012" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-747158012">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/user/BulkSection Actual URL-http://www.fliplearn.com/index.php/user/BulkSection<br/>
-</div>
-</td>
-<td></td>
-<td>6</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_Competency()'><b>Click_on_Competency</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-1011044643" onClick='toggleBox("Output-1011044643", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1011044643" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1011044643">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/competency/admin Actual URL-http://www.fliplearn.com/index.php/competency/admin<br/>
-</div>
-</td>
-<td></td>
-<td>6</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_Evaluation()'><b>Click_on_Evaluation</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-702999333" onClick='toggleBox("Output-702999333", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-702999333" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-702999333">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/evaluation/admin Actual URL-http://www.fliplearn.com/index.php/evaluation/admin<br/>
-</div>
-</td>
-<td></td>
-<td>6</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_Events()'><b>Click_on_Events</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-451312813" onClick='toggleBox("Output-451312813", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-451312813" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-451312813">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/events/index Actual URL-http://www.fliplearn.com/index.php/events/index<br/>
-</div>
-</td>
-<td></td>
-<td>4</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_Gallery()'><b>Click_on_Gallery</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-1768882706" onClick='toggleBox("Output-1768882706", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1768882706" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1768882706">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/pictureGallery Actual URL-http://www.fliplearn.com/index.php/pictureGallery<br/>
-</div>
-</td>
-<td></td>
-<td>5</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_Grades()'><b>Click_on_Grades</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-1530957251" onClick='toggleBox("Output-1530957251", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1530957251" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1530957251">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/grade/admin Actual URL-http://www.fliplearn.com/index.php/grade/admin<br/>
-</div>
-</td>
-<td></td>
-<td>6</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_ManageUser()'><b>Click_on_ManageUser</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-1978209605" onClick='toggleBox("Output-1978209605", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1978209605" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1978209605">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/user/admin Actual URL-http://www.fliplearn.com/index.php/user/admin<br/>
-</div>
-</td>
-<td></td>
-<td>4</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_Message()'><b>Click_on_Message</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-1756207614" onClick='toggleBox("Output-1756207614", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1756207614" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1756207614">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/messages Actual URL-http://www.fliplearn.com/index.php/messages<br/>
-</div>
-</td>
-<td></td>
-<td>4</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_RollNumberSetup()'><b>Click_on_RollNumberSetup</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-1372422140" onClick='toggleBox("Output-1372422140", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1372422140" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1372422140">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/user/RollNo Actual URL-http://www.fliplearn.com/index.php/user/RollNo<br/>
-</div>
-</td>
-<td></td>
-<td>6</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_Student()'><b>Click_on_Student</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-1614133563" onClick='toggleBox("Output-1614133563", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1614133563" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1614133563">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/user/directory Actual URL-http://www.fliplearn.com/index.php/user/directory<br/>
-</div>
-</td>
-<td></td>
-<td>4</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_Teacher()'><b>Click_on_Teacher</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-1860886124" onClick='toggleBox("Output-1860886124", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1860886124" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1860886124">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/user/Tdirectory Actual URL-http://www.fliplearn.com/index.php/user/Tdirectory<br/>
-</div>
-</td>
-<td></td>
-<td>4</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Admin_Login_Script.Click_on_Wall()'><b>Click_on_Wall</b><br>Test class: com.appmodule.testscript.Admin_Login_Script<br/>
-<a href="#Output-1378497201" onClick='toggleBox("Output-1378497201", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1378497201" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1378497201">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/wallPosts Actual URL-http://www.fliplearn.com/index.php/wallPosts<br/>
-</div>
-</td>
-<td></td>
-<td>5</td>
-<td>com.appmodule.testscript.Admin_Login_Script@33a10788</td></tr>
+<td>0</td>
+<td>com.appmodule.testscript.PSBB_Book_orderTest@641147d0</td></tr>
 </table><p>
 </body>
 </html>
