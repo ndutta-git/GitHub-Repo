@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.appmodule.testscript.PSBB_Book_orderTest">
+      <class name="com.appmodule.testscript.Teacher_Login_Script">
         <methods>
-          <include name="Fill_form"/>
-          <include name="openPSBBM"/>
+          <include name="Login_validation"/>
+          <include name="closebrowser"/>
+          <include name="Click_on_AttendanceReport"/>
         </methods>
-      </class> <!-- com.appmodule.testscript.PSBB_Book_orderTest -->
+      </class> <!-- com.appmodule.testscript.Teacher_Login_Script -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

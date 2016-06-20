@@ -13,12 +13,15 @@ import com.appmodule.Generic_method.Generic_class;
 import com.appmodule.homepageclass.HomePage_PagecClass;
 import com.appmodule.homepageclass.IndexHomePage_PageClass;
 import com.appmodule.homepageclass.Loginpage_Pageclass;
+import com.appmodule.perform_pageclass.Perform_PageClass;
+import com.appmodule.share_PageClass.Share_PageClass;
 
 public class Teacher_Login_Script extends Generic_class{
 
 	@SuppressWarnings("rawtypes")
 	public static HashMap testData_HM=new HashMap();
 	
+
 @SuppressWarnings("static-access")
 @BeforeTest
 @Parameters("Browser")
@@ -27,7 +30,8 @@ public static void Login_validation() throws Exception{
 		TestDataSheetName="URL";
 		Login_Role="Teacher";
 		ResultSheetPath="FlipLearn/Results/Result.xlsx";
-		ResultFolder="E:/Git-Repository/scoselenium/smartclassonlinesel/FlipLearn/Results";
+		ResultFolder="C:/Users/ykuld_000/Desktop/smartclassonlinesel/FlipLearn/Results";
+		
 		HomePage_PagecClass	loginobj=fn_OpenApp("CH", "http://www.fliplearn.com/");
 	     fn_FetchExcelData(1);
 	     fn_GetPageLoadTime(NavigationObj.Fliplearnlogo);
@@ -44,17 +48,18 @@ public static void closebrowser(){
 		DriverObj.close();
 		//DriverObj.quit();
 	}
-@SuppressWarnings("static-access")
 @Test(priority=1)
 public static void click_on_Wall() throws Exception, IOException{
-	NavigationObj.clickonwalllink();
+	Share_PageClass.clickonwall();
+	Thread.sleep(2000);
 	verifyUrl("WallPage_Url", 1);
 	fn_GetPageLoadTime(IndexHomePage_PageClass.walllogo_onmain);
 }
 @SuppressWarnings("static-access")
 @Test(priority=2)
 public static void Click_on_Message() throws IOException, Exception{
-	NavigationObj.clickonmessage();
+	Share_PageClass.clickonmessage();
+	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.MessageLogo);
 	verifyUrl("MessagePage_Url", 1);
 	
@@ -62,35 +67,40 @@ public static void Click_on_Message() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=3)
 public static void Click_on_Gallery() throws IOException, Exception{
-	NavigationObj.clickongallerylink();
+	Share_PageClass.clickongallery();
+	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Gallery);
 	verifyUrl("GalleryPage_Url", 1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=4)
 public static void Clcik_on_Event() throws IOException, Exception{
-	NavigationObj.clickonevent();
+	Share_PageClass.clickonevent();
+	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Events);
 	verifyUrl("EventPage_Url", 1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=5)
 public static void Click_on_Announcement() throws IOException, Exception{
-	NavigationObj.clickonannouncement();
+	Share_PageClass.clickonannouncement();
+	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Announcements);
 	verifyUrl("TeacherAnnouncementPage_URL", 1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=6)
 public static void Click_on_Student() throws Exception, IOException{
-	NavigationObj.clickonstudent();
+	Share_PageClass.clickonstudent();
+	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Students);
 	verifyUrl("StudentPage_URL", 1);
 }
 @SuppressWarnings("static-access")
 @Test
 public static void Click_on_Teacher() throws IOException, Exception{
-	NavigationObj.clickonTeacher();
+	Share_PageClass.clickonteacher();
+	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Teachers);
 	Thread.sleep(2000);
 	verifyUrl("TeacherPage_URL", 1);
@@ -98,45 +108,54 @@ public static void Click_on_Teacher() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=7)
 public static void Click_on_AttendanceMarks() throws Exception{
-	NavigationObj.Clickonattendancemarks();
+	Perform_PageClass.Clickonattendancemarks();
+	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.mark_Attendance);
 	verifyUrl("AttendanceMarks_URL", 1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=8)
 public static void Click_on_AttendanceReport() throws Exception{
-     NavigationObj.ClickonAttendance_Report();
+     Perform_PageClass.ClickonAttendance_Report();
+     Thread.sleep(2000);
      fn_GetPageLoadTime(NavigationObj.attendance_report);
 	verifyUrl("AttendanceReport_URL", 1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=9)
 public static void Click_on_PerformAssignment() throws Exception, IOException{
-	NavigationObj.ClickonPerformAssignment();
-	fn_GetPageLoadTime(NavigationObj.assignment_logo);
+	Perform_PageClass.ClickonPerformAssignment();
+	Thread.sleep(2000);
+	fn_GetPageLoadTime(NavigationObj.Homework_logo);
 	verifyUrl("PerformAssignmentPage_URL", 1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=10)
 public static void Click_on_MarksReview() throws Exception{
-	NavigationObj.Clickonmarksreview();
+	Perform_PageClass.Clickonmarksreview();
+	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.marks_review);
 	verifyUrl("MarksReviewPage_URL",1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=11)
 public static void Click_on_MarksreviewreportClasswise() throws Exception{
-	NavigationObj.Clickonmarksreviewreportclasswise();
+	Perform_PageClass.Clickonmarksreviewreportclasswise();
+	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.marks_review_reportclasswise);
 	verifyUrl("MarksReportClassWise_URL", 1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=12)
 public static void Click_on_HealthStatus() throws Exception, IOException{
-	NavigationObj.ClickonHealthstatus();
+	Perform_PageClass.ClickonHealthstatus();
+	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.health_status);
 	verifyUrl("HealthSatatusPage_URL", 1);
 }
 
-
+//  @Test(priority=13)
+//  public static void Click_on_MathGuru() throws IOException, Exception{
+//	  Learn_PageClass.clickonmathguru();
+//   }
 }

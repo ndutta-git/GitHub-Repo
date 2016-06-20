@@ -72,7 +72,6 @@ public class IndexHomePage_PageClass extends Generic_class {
 	
 	
 	
-	
 /***************************************************************Share_Menu_Element************************************************/
 	
 	@FindBy(xpath="//a[@href='/index.php/wallPosts']")

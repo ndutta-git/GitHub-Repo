@@ -14,8 +14,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
+import org.apache.commons.logging.impl.Log4JLogger;
+import org.apache.log4j.PropertyConfigurator;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
@@ -47,24 +54,15 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
-
-
-
-
-
-
-
-
-
-
-
-
 import com.appmodule.commannevigation.CommanNevigation_Pageclass;
 import com.appmodule.homepageclass.HomePage_PagecClass;
+import com.jacob.com.LibraryLoader;
 
 
+@SuppressWarnings("unused")
 public class Generic_class {
 	
+	private static final String DialagText = null;
 	public  static String ArrValToWrite;
 	public  static String ResultAr;
 	public static  String TestDataPath;
@@ -79,6 +77,9 @@ public class Generic_class {
 	public static String Page_Load_time;
 	public static String Sub_Manu_Item;
 	public static String ResultSheetPath;
+	public static  WebDriver driver;
+	public static  int invalidImageCount;
+	public static int invalidLinksCount;
 	public static  WebDriver DriverObj;
 	public static  CommanNevigation_Pageclass NavigationObj;
 	@SuppressWarnings("rawtypes")
@@ -159,9 +160,9 @@ public static void fn_Select(WebElement webelementname){
 			System.out.println("Allready Selected");
 		}
 	}
-public static void fn_MouseOver(WebDriver DriverObj, WebElement webelementname){
+public static void fn_MouseOver(WebDriver DriverObj, WebElement ElementToMouseOver){
 		Actions Actobj=new Actions(DriverObj);
-		Actobj.moveToElement(webelementname).build().perform();
+		Actobj.moveToElement(ElementToMouseOver).build().perform();
 	}
 	
 public static void fn_mouseOverClick(WebDriver DriverObj,WebElement Elementtomove, WebElement ElementToClick){
@@ -208,7 +209,7 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 	}
 }
 	
-	@SuppressWarnings("unused")
+
 	public  static void verifyVisible(WebElement WebObj,String ObjName) throws IOException, InvalidFormatException{
 		try{
 			
@@ -238,7 +239,7 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 		}
 		}
 	
-	@SuppressWarnings("unused")
+
 	public static void verifybutton(WebElement buttonobj,String objname){
 		try{
 			boolean Actualstatus=false;
@@ -395,7 +396,7 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 		    	fn_WriteResultToExcel(ResultArr);
 		    	System.out.println(ResultArr);
 		    }else{
-		    	@SuppressWarnings("unused")
+		   
 				String msg="Text Validation Failed. Expected Text="+ExpectedText+" Actual Text-"+ActualText;
 		    	String[] ResultArr=fn_CreateArray(ActualText,"Failed");
 		    	//fn_WriteResultToExcel(ResultArr);
@@ -403,10 +404,10 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 		    	 Assert.assertTrue(false);
 			}
 		}
-	 public  static String fn_GetText(WebElement WebObj) throws IOException, InvalidFormatException{
+	 public  static  String fn_GetText(WebElement ElementToGetText) throws IOException, InvalidFormatException{
 		    String ActualText="";
 			try{
-			    ActualText=WebObj.getText();
+			    ActualText=ElementToGetText.getText();
 			}catch(Exception e){	
 			}  if(ActualText==null){
 				//String[] textresult=fn_CreateArray("Text Not Found","Pass");
@@ -508,7 +509,7 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
   	   return wBookObj;
      }
 	 
-	  @SuppressWarnings("unused")
+	  
 		public static ArrayList<String> fn_FetchExcelData(String FilePath,String ColumnName) throws IOException{
       	   String WbookPath=FilePath;
       	      Workbook WBookObj=fn_GetWorkbook(FilePath);
@@ -563,9 +564,9 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
       	           
       	      }
       	  }
-	  @SuppressWarnings("unused")
+	  
 		public static void fn_FetchExcelData1(String FilePath,String ColumnName) throws IOException{
-    	      String WbookPath=FilePath;
+    	   String WbookPath=FilePath;
     	      Workbook WBookObj=fn_GetWorkbook(FilePath);
     	      Sheet SheetObj=WBookObj.getSheetAt(0);
     	      Row FstRowObj=SheetObj.getRow(0);
@@ -646,17 +647,126 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 			
 		}		
 	 public static void fn_GetPageLoadTime(WebElement elementtocheck){
-		 long startTime = System.currentTimeMillis(); 
+		 long startTime = System.currentTimeMillis();
 		 while(((System.currentTimeMillis())-startTime)<60){  
 	         if(elementtocheck.isDisplayed()){  
 	  long endTime = System.currentTimeMillis();  
-	 // System.out.println("Start time is " +startTime+ " The end Time is " +endTime);
-	  long loadTimemilisecond = endTime - startTime;  
-	  Page_Load_time=("Totaltime: " +loadTimemilisecond+ " MS");
-	//System.out.println("Totaltime: " +loadTimemilisecond+ " MS");   
+	  long loadTimemilisecond = endTime - startTime;
+	  long page_load_time_sec =  loadTimemilisecond/1000;
+	  Page_Load_time=("Totaltime: " +page_load_time_sec+ " MS");
+	  
 	break;  
 	  }    
 	   }       
 	     }  
-	 }
+	 public static void FindBrokenImages() {
+			
+			try {
+				invalidImageCount = 0;
+				List<WebElement> imagesList = driver.findElements(By.tagName("img"));
+				System.out.println("Total no. of images are " + imagesList.size());
+				for (WebElement imgElement : imagesList) {
+					if (imgElement != null) {
+						verifyimageActive(imgElement);
+					}
+				}
+				System.out.println("Total no. of invalid images are "	+ invalidImageCount);
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(e.getMessage());
+			}
+	}
+public static  void verifyimageActive(WebElement imgElement) {
+			try {
+				HttpClient client = HttpClientBuilder.create().build();
+				HttpGet request = new HttpGet(imgElement.getAttribute("src"));
+				HttpResponse response = client.execute(request);
+				// verifying response code he HttpStatus should be 200 if not,
+				// increment as invalid images count
+				if (response.getStatusLine().getStatusCode() != 200)
+					invalidImageCount++;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	public  static void FindBrokenLinks(){
+			try {
+				invalidLinksCount = 0;
+				List<WebElement> anchorTagsList = driver.findElements(By.tagName("a"));
+				System.out.println("Total no. of links are "+ anchorTagsList.size());
+				for (WebElement anchorTagElement : anchorTagsList) {
+					if (anchorTagElement != null) {
+						String url = anchorTagElement.getAttribute("href");
+						if (url != null && !url.contains("javascript")) {
+							verifyURLStatus(url);
+						} else {
+							invalidLinksCount++;
+						}
+					}
+				}
+
+				System.out.println("Total no. of invalid links are "
+						+ invalidLinksCount);
+              } catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(e.getMessage());
+			}		
+}
+
+    private static void verifyURLStatus(String url) {
+	HttpClient client = HttpClientBuilder.create().build();
+	HttpGet request = new HttpGet(url);
+	try {
+		HttpResponse response = client.execute(request);
+		// verifying response code and The HttpStatus should be 200 if not,
+		// increment invalid link count
+		////We can also check for 404 status code like response.getStatusLine().getStatusCode() == 404
+		if (response.getStatusLine().getStatusCode() != 200)
+			invalidLinksCount++;
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+  }
+    public static void uploadFile(String fileName,String BrowserName,WebElement BrowseButton) throws Exception{
+    	if(BrowserName.equalsIgnoreCase("FF")){
+			File file = new File("Files\\Upload\\"+fileName);
+			String filePath=file.getAbsolutePath();
+			Process process = Runtime.getRuntime().exec(DialagText);
+			process.waitFor();
+		}else if(BrowserName.equalsIgnoreCase("CH")){
+			File ExeFilePath= new File("autoit\\CH_FileAutoIT\\Upload_Dialog_CH.exe");
+			String ExePath=ExeFilePath.getAbsolutePath();
+			File file = new File("Files\\Upload\\"+fileName);
+			String filePath=file.getAbsolutePath();
+		    String[] DialagText={ExePath,filePath};
+			Process process = Runtime.getRuntime().exec(DialagText);
+			process.waitFor();
+		}else if(BrowserName.equalsIgnoreCase("IE")){
+			File ExeFilePath= new File("autoit\\IE_FileAutoIT\\Upload_Dialog_IE.exe");
+			String ExePath=ExeFilePath.getAbsolutePath();
+			File file = new File("Files\\Upload\\"+fileName);
+			String filePath=file.getAbsolutePath();
+		    String[] DialagText={ExePath,"Choose File to Upload", "Open", filePath};
+			Process process = Runtime.getRuntime().exec(DialagText);
+			process.waitFor();
+	  }
+    }
+    static String jvmBitVersion(){
+		 return System.getProperty("sun.arch.data.model");
+		}
+    public static void systemBit(){
+    	String jacobDllVersionToUse;
+		if (jvmBitVersion().contains("32")){
+		jacobDllVersionToUse = "jacob-1.18-M2-x86.dll";
+		}
+		else {
+		jacobDllVersionToUse = "jacob-1.18-M2-x64.dll";
+		}
+
+		File file = new File("lib", jacobDllVersionToUse);
+		System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());
+    }
+}
+
+	 
 
