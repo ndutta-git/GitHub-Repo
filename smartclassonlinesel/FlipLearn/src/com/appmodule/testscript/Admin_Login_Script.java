@@ -19,14 +19,6 @@ import com.appmodule.homepageclass.Loginpage_Pageclass;
 import com.appmodule.perform_pageclass.Attendance_PageClass;
 import com.appmodule.perform_pageclass.HomeWork_PageClass;
 import com.appmodule.perform_pageclass.Perform_PageClass;
-import com.appmodule.share_PageClass.Announement_PageClass;
-import com.appmodule.share_PageClass.Events_PageClass;
-import com.appmodule.share_PageClass.Gallery_PageClass;
-import com.appmodule.share_PageClass.Message_Pageclass;
-import com.appmodule.share_PageClass.Share_PageClass;
-import com.appmodule.share_PageClass.Student_PageClass;
-import com.appmodule.share_PageClass.Teacher_PageClass;
-import com.appmodule.share_PageClass.Wall_PageClass;
 
 public class Admin_Login_Script extends Generic_class{
 
@@ -41,9 +33,10 @@ public class Admin_Login_Script extends Generic_class{
 		TestDataSheetName="URL";
 		Login_Role="Admin";
 		ResultSheetPath="FlipLearn/Results/Result.xlsx";
-		ResultFolder="C:/Users/ykuld_000/Desktop/smartclassonlinesel/FlipLearn/Results";
-		Logger log = Logger.getLogger(Logger.class.getClass());
+		ResultFolder="E:/Git-Repository/scoselenium/smartclassonlinesel/FlipLearn/Results";
+		
 	    HomePage_PagecClass	loginpageobj=fn_OpenApp("CH", "http://www.fliplearn.com");
+	    Logger log = Logger.getLogger(Logger.class.getClass());
 	    log.info("Fliplearn Opened");
 	    fn_FetchExcelData(1);
 	    fn_GetPageLoadTime(NavigationObj.Fliplearnlogo);
@@ -65,52 +58,58 @@ public class Admin_Login_Script extends Generic_class{
 		//DriverObj.quit();
 	}
 
-    @SuppressWarnings({ "unused" })
+   
 	@Test(priority=1)
 	public static void Click_on_Wall() throws IOException, Exception{
-    	Wall_PageClass wallPage=Share_PageClass.clickonwall();
+    	IndexHomePage_PageClass.Clickonwalllink();
 	fn_GetPageLoadTime(IndexHomePage_PageClass.walllogo_onmain);
 	verifyUrl("WallPage_Url", 1);
     }
-    @SuppressWarnings({ "static-access", "unused" })
+   
+	@SuppressWarnings("static-access")
 	@Test(priority=2)
     public static void Click_on_Message() throws IOException, Exception{
-    	Message_Pageclass MessagePage= Share_PageClass.clickonmessage();
+    IndexHomePage_PageClass.clickOnMessage();
     	fn_GetPageLoadTime(NavigationObj.MessageLogo);
     	verifyUrl("MessagePage_Url", 1);
     }
-    @SuppressWarnings({ "static-access", "unused" })
+  
+	@SuppressWarnings("static-access")
 	@Test(priority=3)
     public static void Click_on_Gallery() throws IOException, Exception{
-    	Gallery_PageClass GalleryPage=Share_PageClass.clickongallery();
+    	IndexHomePage_PageClass.Clickongallerylink();
     	fn_GetPageLoadTime(NavigationObj.Gallery);
     	verifyUrl("GalleryPage_Url", 1);
     }
-    @SuppressWarnings({ "static-access", "unused" })
+   
+	@SuppressWarnings("static-access")
 	@Test(priority=4)
     public static void Click_on_Events() throws IOException, Exception{
-    	Events_PageClass EventPage=Share_PageClass.clickonevent();
+    	IndexHomePage_PageClass.Clickonevent();
     	fn_GetPageLoadTime(NavigationObj.Events);
     	verifyUrl("EventPage_Url", 1);
     }
-    @SuppressWarnings({ "static-access", "unused" })
+   
+	@SuppressWarnings("static-access")
 	@Test(priority=5)
     public static void Click_on_Announcement() throws IOException, Exception{
-    	Announement_PageClass AnnouncementPage=Share_PageClass.clickonannouncement();
+    	IndexHomePage_PageClass.Clickonannouncement();
     	fn_GetPageLoadTime(NavigationObj.Announcements);
     	verifyUrl("Adminannouncement_URL", 1);
     }
-    @SuppressWarnings({ "static-access", "unused" })
+  
+	@SuppressWarnings("static-access")
 	@Test(priority=6)
     public static void Click_on_Student() throws IOException, Exception{
-    	Student_PageClass StudentPage=Share_PageClass.clickonstudent();
+    IndexHomePage_PageClass.Clickonstudent();
     	fn_GetPageLoadTime(NavigationObj.Students);
     	verifyUrl("StudentPage_URL", 1);
     }
-    @SuppressWarnings({ "static-access", "unused" })
+  
+	@SuppressWarnings("static-access")
 	@Test(priority=7)
     public static void Click_on_Teacher() throws IOException, Exception{
-    	Teacher_PageClass TeacherPage=Share_PageClass.clickonteacher();
+    	IndexHomePage_PageClass.ClickonTeacher();
     	fn_GetPageLoadTime(NavigationObj.Teachers);
     	verifyUrl("TeacherPage_URL", 1);
     }

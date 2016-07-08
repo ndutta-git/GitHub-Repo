@@ -20,5 +20,8 @@ public class Wall_PageClass extends Generic_class{
 	public static WebElement Wall_post_description;
 	
 	
+	@FindBy(xpath="//div[@class='span2']/input")
+	public static WebElement Post_Button;
+	
 	
 }

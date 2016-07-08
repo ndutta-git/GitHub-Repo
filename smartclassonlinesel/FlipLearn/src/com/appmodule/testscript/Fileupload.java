@@ -9,8 +9,8 @@ import org.testng.Assert;
 
 import com.appmodule.Generic_method.Generic_class;
 import com.appmodule.homepageclass.HomePage_PagecClass;
+import com.appmodule.homepageclass.IndexHomePage_PageClass;
 import com.appmodule.homepageclass.Loginpage_Pageclass;
-import com.appmodule.share_PageClass.Share_PageClass;
 import com.jacob.com.LibraryLoader;
 
 public class Fileupload extends Generic_class{
@@ -47,7 +47,7 @@ public class Fileupload extends Generic_class{
 		DriverObj.findElement((By.id("LoginForm_password"))).sendKeys("1234567");
 		DriverObj.findElement(By.name("yt0")).click();
 		Thread.sleep(3000);
-		Share_PageClass.clickonwall();
+		IndexHomePage_PageClass.Clickonwalllink();
 		Thread.sleep(3000);
 		WebElement iframe=DriverObj.findElement(By.id("post_body_ifr"));
 		DriverObj.switchTo().frame(iframe);
@@ -59,7 +59,7 @@ public class Fileupload extends Generic_class{
 		
 	}
 	public static void MessageFileUpload() throws IOException, Exception{
-		Share_PageClass.clickonmessage();
+		IndexHomePage_PageClass.clickOnMessage();
 		Thread.sleep(3000);
 		String Messagetext=fn_GetText(DriverObj.findElement(By.xpath("//form[@id='sentMsg-form']//div/h3")));
 		Assert.assertEquals(Messagetext, "Messages");

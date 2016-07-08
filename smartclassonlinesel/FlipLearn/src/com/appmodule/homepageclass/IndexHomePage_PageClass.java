@@ -1,7 +1,9 @@
 package com.appmodule.homepageclass;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,6 +17,7 @@ import com.appmodule.perform_pageclass.SelfAwareness_PageClass;
 import com.appmodule.share_PageClass.Announement_PageClass;
 import com.appmodule.share_PageClass.Events_PageClass;
 import com.appmodule.share_PageClass.Gallery_PageClass;
+import com.appmodule.share_PageClass.Message_Pageclass;
 import com.appmodule.share_PageClass.Student_PageClass;
 import com.appmodule.share_PageClass.Teacher_PageClass;
 import com.appmodule.share_PageClass.Wall_PageClass;
@@ -75,25 +78,48 @@ public class IndexHomePage_PageClass extends Generic_class {
 /***************************************************************Share_Menu_Element************************************************/
 	
 	@FindBy(xpath="//a[@href='/index.php/wallPosts']")
-	public static WebElement wall_liink;
+	public static WebElement wall_link;
+	
+	@FindBy(xpath="//a[@href='/index.php/wallPosts']/span")
+	public static WebElement Wall_Text;
 	
 	@FindBy(css="span[class='icon16  icomoon-icon-images']")
 	public static WebElement gallery_link;
 	
+	@FindBy(xpath="//a[@href='/index.php/pictureGallery']")
+	public static WebElement Gallery_Text;
+	
 	@FindBy(xpath="//a[@href='/index.php/messages']")
 	public static WebElement message_link;
+	
+	@FindBy(xpath="//a[@href='/index.php/messages']/span")
+	public static WebElement Message_Text;
 	
 	@FindBy(xpath="//a[@href='/index.php/events/index']")
 	public static WebElement event_link;
 	
+	@FindBy(xpath="//a[@href='/index.php/events/index']/span")
+	public static WebElement Event_Text;
+	
+
 	@FindBy(css="span[class='icon16 icomoon-icon-megaphone']")
 	public static WebElement announcement_link;
+	
+	@FindBy(xpath="//a[@href='/index.php/announcements/index']/span")
+	public static WebElement Announcement_Text;
+	
 	
 	@FindBy(css="a[href='/index.php/user/directory']")
 	public static WebElement student_link;
 	
+	@FindBy(xpath="//a[@href='/index.php/user/directory']/span")
+	public static WebElement student_Text;
+	
 	@FindBy(css="a[href='/index.php/user/Tdirectory']")
 	public static WebElement teacher_link;
+	
+	@FindBy(xpath="//a[@href='/index.php/user/Tdirectory']/span")
+	public static WebElement Teacher_Text;
 	
 	/***************************************************perform_Menu*************************************************************/
 	
@@ -183,38 +209,75 @@ public class IndexHomePage_PageClass extends Generic_class {
 	    HomePage_PagecClass homepageobj=PageFactory.initElements(DriverObj, HomePage_PagecClass.class);
 	    return homepageobj;
     }
-/************************************************Share_Menu_link***************************************************************/
-    public static IndexHomePage_PageClass mouseoveronsharelink(){
+/************************************************Share_Menu_link
+ * @throws InterruptedException 
+ * @throws IOException 
+ * @throws InvalidFormatException ***************************************************************/
+   public static Message_Pageclass clickOnMessage() throws InterruptedException, InvalidFormatException, IOException{
+	   fn_MouseOver(DriverObj, share_menu);
+	   Main_Manu_Item=fn_GetText(share_menu);
+	   Thread.sleep(2000);
+	   Sub_Manu_Item=fn_GetText(Message_Text);
+	   fn_mouseOverClick(DriverObj, share_menu, message_link);
+	   Message_Pageclass MessagePageClass=PageFactory.initElements(DriverObj, Message_Pageclass.class);
+	   return MessagePageClass;
+   }
+   
+   public static IndexHomePage_PageClass mouseoveronsharelink(){
     	fn_MouseOver(DriverObj, share_menu);
     	IndexHomePage_PageClass commonnavigationpageobj=PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
     	return commonnavigationpageobj;
     }
-    public static Wall_PageClass mouseoverclickonwalllink(){
-    	fn_mouseOverClick(DriverObj, share_menu, wall_liink);
+    public static Wall_PageClass Clickonwalllink() throws Exception{
+    	fn_MouseOver(DriverObj, share_menu);
+    	Main_Manu_Item=fn_GetText(share_menu);
+    	Thread.sleep(2000);
+    	Sub_Manu_Item=fn_GetText(Wall_Text);
+    	fn_mouseOverClick(DriverObj, share_menu, wall_link);
     	Wall_PageClass wallpageobj=PageFactory.initElements(DriverObj, Wall_PageClass.class);
     	return wallpageobj;
     }
-    public static Gallery_PageClass mouseoverclickongallerylink(){
+    public static Gallery_PageClass Clickongallerylink() throws Exception{
+    	fn_MouseOver(DriverObj, share_menu);
+    	Main_Manu_Item=fn_GetText(share_menu);
+    	Thread.sleep(2000);
+    	Sub_Manu_Item=fn_GetText(Gallery_Text);
     	fn_mouseOverClick(DriverObj, share_menu, gallery_link);
     	Gallery_PageClass gallerypageobj=PageFactory.initElements(DriverObj, Gallery_PageClass.class);
     	return gallerypageobj;
     }
-    public static Events_PageClass mouseoverclickonevent(){
+    public static Events_PageClass Clickonevent() throws Exception{
+    	fn_MouseOver(DriverObj, share_menu);
+    	Main_Manu_Item=fn_GetText(share_menu);
+    	Thread.sleep(2000);
+    	Sub_Manu_Item=fn_GetText(Event_Text);
     	fn_mouseOverClick(DriverObj, share_menu, event_link);
     	Events_PageClass eventpageobj=PageFactory.initElements(DriverObj, Events_PageClass.class);
     	return eventpageobj;
     }
-    public static Announement_PageClass mouseoverclickonannouncement(){
+    public static Announement_PageClass Clickonannouncement() throws Exception{
+    	fn_MouseOver(DriverObj, share_menu);
+    	Main_Manu_Item=fn_GetText(share_menu);
+    	Thread.sleep(2000);
+    	Sub_Manu_Item=fn_GetText(Announcement_Text);
     	fn_mouseOverClick(DriverObj, share_menu, announcement_link);
     	Announement_PageClass announcementpageobj=PageFactory.initElements(DriverObj, Announement_PageClass.class);
     	return announcementpageobj;
     }
-    public static Student_PageClass mouseoverclickonstudent(){
+    public static Student_PageClass Clickonstudent() throws Exception{
+    	fn_MouseOver(DriverObj, share_menu);
+    	Main_Manu_Item=fn_GetText(share_menu);
+    	Thread.sleep(2000);
+    	Sub_Manu_Item=fn_GetText(student_Text);
     	fn_mouseOverClick(DriverObj, share_menu, student_link);
     	Student_PageClass studentpageobj=PageFactory.initElements(DriverObj, Student_PageClass.class);
     	return studentpageobj;
     }
-    public static Teacher_PageClass mouseoverclickonTeacher(){
+    public static Teacher_PageClass ClickonTeacher() throws Exception{
+    	fn_MouseOver(DriverObj, share_menu);
+    	Main_Manu_Item=fn_GetText(share_menu);
+    	Thread.sleep(2000);
+    	Sub_Manu_Item=fn_GetText(Teacher_Text);
     	fn_mouseOverClick(DriverObj, share_menu, teacher_link);
     	Teacher_PageClass teacherpageobj=PageFactory.initElements(DriverObj, Teacher_PageClass.class);
     	return teacherpageobj;
@@ -225,22 +288,38 @@ public class IndexHomePage_PageClass extends Generic_class {
     	IndexHomePage_PageClass commonobj=PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
         return commonobj;
     }
-    public static Attendance_PageClass mouseoverclickonattendance(){
+    public static Attendance_PageClass mouseoverclickonattendance() throws Exception{
+    	mouseoveronperform();
+    	Main_Manu_Item=fn_GetText(perform_menu);
+    	Thread.sleep(2000);
+    	Sub_Manu_Item=fn_GetText(attendance_link);
     	fn_mouseOverClick(DriverObj, perform_menu, attendance_link);
     	Attendance_PageClass attendancepageobj=PageFactory.initElements(DriverObj, Attendance_PageClass.class);
     	return attendancepageobj;
     }
-    public static Marks_PageClass mouseoverclickonmarks(){
+    public static Marks_PageClass mouseoverclickonmarks() throws Exception{
+    	mouseoveronperform();
+    	Main_Manu_Item=fn_GetText(perform_menu);
+    	Thread.sleep(2000);
+    	Sub_Manu_Item=fn_GetText(marks_link);
     	fn_mouseOverClick(DriverObj, perform_menu, marks_link);
     	Marks_PageClass markspageobj=PageFactory.initElements(DriverObj, Marks_PageClass.class);
     	return markspageobj;
     }
-    public static Dashboard_PageClass mouseoverclickondashboard(){
+    public static Dashboard_PageClass mouseoverclickondashboard() throws Exception{
+    	mouseoveronperform();
+    	Main_Manu_Item=fn_GetText(perform_menu);
+    	Thread.sleep(2000);
+    	Sub_Manu_Item=fn_GetText(dashboard_link);
     	fn_mouseOverClick(DriverObj, perform_menu, dashboard_link);
     	Dashboard_PageClass dashboardpageobj=PageFactory.initElements(DriverObj, Dashboard_PageClass.class);
     	return dashboardpageobj;
     }
-    public static SelfAwareness_PageClass mouseoverclickonselefawareness(){
+    public static SelfAwareness_PageClass mouseoverclickonselefawareness() throws Exception{
+    	mouseoveronperform();
+    	Main_Manu_Item=fn_GetText(perform_menu);
+    	Thread.sleep(2000);
+    	Sub_Manu_Item=fn_GetText(selefawareness_link);
     	fn_mouseOverClick(DriverObj, perform_menu, selefawareness_link);
     	SelfAwareness_PageClass selfawarenesspageobj=PageFactory.initElements(DriverObj, SelfAwareness_PageClass.class);
     	return selfawarenesspageobj;

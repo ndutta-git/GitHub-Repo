@@ -14,7 +14,6 @@ import com.appmodule.homepageclass.HomePage_PagecClass;
 import com.appmodule.homepageclass.IndexHomePage_PageClass;
 import com.appmodule.homepageclass.Loginpage_Pageclass;
 import com.appmodule.perform_pageclass.Perform_PageClass;
-import com.appmodule.share_PageClass.Share_PageClass;
 
 public class Teacher_Login_Script extends Generic_class{
 
@@ -50,7 +49,7 @@ public static void closebrowser(){
 	}
 @Test(priority=1)
 public static void click_on_Wall() throws Exception, IOException{
-	Share_PageClass.clickonwall();
+	IndexHomePage_PageClass.Clickonwalllink();
 	Thread.sleep(2000);
 	verifyUrl("WallPage_Url", 1);
 	fn_GetPageLoadTime(IndexHomePage_PageClass.walllogo_onmain);
@@ -58,7 +57,7 @@ public static void click_on_Wall() throws Exception, IOException{
 @SuppressWarnings("static-access")
 @Test(priority=2)
 public static void Click_on_Message() throws IOException, Exception{
-	Share_PageClass.clickonmessage();
+	IndexHomePage_PageClass.clickOnMessage();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.MessageLogo);
 	verifyUrl("MessagePage_Url", 1);
@@ -67,7 +66,7 @@ public static void Click_on_Message() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=3)
 public static void Click_on_Gallery() throws IOException, Exception{
-	Share_PageClass.clickongallery();
+	IndexHomePage_PageClass.Clickongallerylink();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Gallery);
 	verifyUrl("GalleryPage_Url", 1);
@@ -75,7 +74,7 @@ public static void Click_on_Gallery() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=4)
 public static void Clcik_on_Event() throws IOException, Exception{
-	Share_PageClass.clickonevent();
+	IndexHomePage_PageClass.Clickonevent();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Events);
 	verifyUrl("EventPage_Url", 1);
@@ -83,7 +82,7 @@ public static void Clcik_on_Event() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=5)
 public static void Click_on_Announcement() throws IOException, Exception{
-	Share_PageClass.clickonannouncement();
+	IndexHomePage_PageClass.Clickonannouncement();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Announcements);
 	verifyUrl("TeacherAnnouncementPage_URL", 1);
@@ -91,7 +90,7 @@ public static void Click_on_Announcement() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=6)
 public static void Click_on_Student() throws Exception, IOException{
-	Share_PageClass.clickonstudent();
+	IndexHomePage_PageClass.Clickonstudent();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Students);
 	verifyUrl("StudentPage_URL", 1);
@@ -99,7 +98,7 @@ public static void Click_on_Student() throws Exception, IOException{
 @SuppressWarnings("static-access")
 @Test
 public static void Click_on_Teacher() throws IOException, Exception{
-	Share_PageClass.clickonteacher();
+	IndexHomePage_PageClass.ClickonTeacher();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Teachers);
 	Thread.sleep(2000);

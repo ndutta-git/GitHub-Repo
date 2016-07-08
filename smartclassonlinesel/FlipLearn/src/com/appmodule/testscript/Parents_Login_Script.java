@@ -3,9 +3,6 @@ package com.appmodule.testscript;
 import java.io.IOException;
 import java.util.HashMap;
 
-import org.apache.commons.logging.impl.Log4JLogger;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -15,9 +12,7 @@ import com.appmodule.Generic_method.Generic_class;
 import com.appmodule.homepageclass.HomePage_PagecClass;
 import com.appmodule.homepageclass.IndexHomePage_PageClass;
 import com.appmodule.homepageclass.Loginpage_Pageclass;
-import com.appmodule.perform_pageclass.Marks_PageClass;
-import com.appmodule.perform_pageclass.Perform_PageClass;
-import com.appmodule.share_PageClass.Share_PageClass;
+import com.appmodule.share_PageClass.Wall_PageClass;
 
 public class Parents_Login_Script extends Generic_class{
 
@@ -32,10 +27,10 @@ public static void Login_validation() throws Exception{
 		Login_Role="Parent";
 		ResultSheetPath="FlipLearn/Results/Result.xlsx";
 		ResultFolder="C:/Users/ykuld_000/Desktop/smartclassonlinesel/FlipLearn/Results";
-		Logger logger=Logger.getLogger(Log4JLogger.class.getName());
-		PropertyConfigurator.configure("Log4j.properties");
+		//Logger logger=Logger.getLogger(Log4JLogger.class.getName());
+		//PropertyConfigurator.configure("Log4j.properties");
 		HomePage_PagecClass	loginobj=fn_OpenApp("CH", "http://www.fliplearn.com");
-		logger.info("Fliplearn Opened");
+		//logger.info("Fliplearn Opened");
 	     fn_FetchExcelData(1);
 	     fn_GetPageLoadTime(NavigationObj.Fliplearnlogo);
 	     verifyUrl("HomePage_School_URL",1);
@@ -56,67 +51,60 @@ public static void closebrowser(){
 
 @Test(priority=1)
 public static void click_on_wall() throws IOException, Exception{
-      Share_PageClass.clickonwall();
-      fn_GetPageLoadTime(IndexHomePage_PageClass.walllogo_onmain);
+      IndexHomePage_PageClass.Clickonwalllink();
+      fn_GetPageLoadTime(Wall_PageClass.wall_logo);
        verifyUrl("WallPage_Url", 1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=2)
 public static void click_on_message() throws IOException, Exception{
-	Share_PageClass.clickonmessage();
+	IndexHomePage_PageClass.clickOnMessage();
 	fn_GetPageLoadTime(NavigationObj.MessageLogo);
 	verifyUrl("MessagePage_Url",1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=3)
 public static void click_on_Gallery() throws IOException, Exception{
-	Share_PageClass.clickongallery();
+	IndexHomePage_PageClass.Clickongallerylink();
 	fn_GetPageLoadTime(NavigationObj.Gallery);
 	verifyUrl("GalleryPage_Url", 1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=4)
 public static void click_on_Events() throws IOException, Exception{
-	Share_PageClass.clickonevent();
+	IndexHomePage_PageClass.Clickonevent();
 	fn_GetPageLoadTime(NavigationObj.Events);
 	verifyUrl("EventPage_Url", 1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=5)
 public static void click_on_Announcement() throws IOException, Exception{
-	Share_PageClass.clickonannouncement();
+	IndexHomePage_PageClass.Clickonannouncement();
 	fn_GetPageLoadTime(NavigationObj.Announcements);
 	verifyUrl("AnnouncementPage_Url", 1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=6)
 public static void click_on_Teacher() throws IOException, Exception{
-	Share_PageClass.clickonteacher();
+	IndexHomePage_PageClass.ClickonTeacher();
 	fn_GetPageLoadTime(NavigationObj.Teachers);
 	verifyUrl("TeacherPage_URL", 1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=7)
 public static void click_on_Atteandance() throws Exception, IOException{
-	Perform_PageClass.clickonattendance();
+	IndexHomePage_PageClass.mouseoverclickonattendance();
 	fn_GetPageLoadTime(NavigationObj.attendance_report);
 	verifyUrl("AttendancePage_Url", 1);
 }
 @SuppressWarnings("static-access")
 @Test(priority=8)
 public static void click_on_marks() throws Exception, IOException{
-	Marks_PageClass markspageobj=PageFactory.initElements(DriverObj, Marks_PageClass.class);
-	markspageobj.Click_on_Marks();
+	IndexHomePage_PageClass.mouseoverclickonmarks();
 	fn_GetPageLoadTime(NavigationObj.Parent_marks_link);
 	verifyUrl("MarksPage_URL", 1);
 }
-@Test(priority=9)
-@SuppressWarnings("static-access")
-public static void Click_on_Homework() throws IOException, Exception{
-	Perform_PageClass.ClickOnHomework();
-	fn_GetPageLoadTime(NavigationObj.Homework_logo);
-	verifyUrl("PerformAssignmentPage_URL", 1);
-}
+
 
 
 }

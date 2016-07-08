@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.appmodule.testscript.Teacher_Login_Script">
+      <class name="com.appmodule.testscript.Parents_Login_Script">
         <methods>
+          <include name="click_on_Atteandance"/>
+          <include name="click_on_marks"/>
           <include name="Login_validation"/>
           <include name="closebrowser"/>
-          <include name="Click_on_AttendanceReport"/>
+          <include name="Click_on_Homework"/>
         </methods>
-      </class> <!-- com.appmodule.testscript.Teacher_Login_Script -->
+      </class> <!-- com.appmodule.testscript.Parents_Login_Script -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

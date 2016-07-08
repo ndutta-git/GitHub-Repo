@@ -54,6 +54,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
+import autoitx4java.AutoItX;
+
 import com.appmodule.commannevigation.CommanNevigation_Pageclass;
 import com.appmodule.homepageclass.HomePage_PagecClass;
 import com.jacob.com.LibraryLoader;
@@ -766,6 +768,36 @@ public static  void verifyimageActive(WebElement imgElement) {
 		File file = new File("lib", jacobDllVersionToUse);
 		System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());
     }
+    public static void fn_uploadFile(String FileName,String WindowPath) throws InterruptedException{
+    	String jacobDllVersionToUse;
+    	if (jvmBitVersion().contains("32")){
+    	jacobDllVersionToUse = "jacob-1.18-M2-x86.dll";
+    	}
+    	else {
+    	jacobDllVersionToUse = "jacob-1.18-M2-x64.dll";
+    	}
+
+    	File file = new File("lib", jacobDllVersionToUse);
+    	System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());
+    	try{
+    	AutoItX autoit = new AutoItX();
+    	autoit.winWaitActive(WindowPath,"",3000);
+    	File file1 = new File("Files\\Upload\\"+FileName);
+		String filePath=file1.getAbsolutePath();
+    	autoit.send(FileName);
+    	autoit.send("{ENTER}");
+    	}catch(Exception e){
+    		Thread.sleep(3000);
+    		AutoItX autoit = new AutoItX();
+        	autoit.winWaitActive(WindowPath,"",3000);
+        	File file1 = new File("Files\\Upload\\"+FileName);
+    		String filePath=file1.getAbsolutePath();
+        	autoit.send(FileName);
+        	autoit.send("{ENTER}");
+    	}
+    	
+    	}
+    
 }
 
 	 

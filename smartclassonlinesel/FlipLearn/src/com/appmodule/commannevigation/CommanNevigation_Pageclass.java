@@ -233,6 +233,18 @@ public class CommanNevigation_Pageclass extends Generic_class {
 	    return homepageobj;
     }
 
- /*************************************************perform_Menu_link**********************************************************/
+ /************************************************Browse or drop file**********************************************************/
   
+   @FindBy(xpath="//div[@class='qq-upload-button']/input")
+   public static WebElement browse_button;
+   
+   public static void Click_Upload_File() throws Exception{
+	   try{
+		   fn_SimpleClick(browse_button);
+	   }catch(Exception e){
+		   Thread.sleep(2000);
+		   fn_SimpleClick(browse_button);
+	   }
+   }
+   
 }
