@@ -1,5 +1,7 @@
 package com.appmodule.perform_pageclass;
 
-public class HomeWork_PageClass {
+import com.appmodule.Generic_method.Generic_class;
+
+public class HomeWork_PageClass extends Generic_class{
 
 }

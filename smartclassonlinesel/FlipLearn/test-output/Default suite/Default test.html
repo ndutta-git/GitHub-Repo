@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>6/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>7/6/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jul 08 11:15:20 IST 2016</td>
+<td>Started on:</td><td>Mon Jul 18 10:33:41 IST 2016</td>
 </tr>
-<tr><td>Total time:</td><td>210 seconds (210005 ms)</td>
+<tr><td>Total time:</td><td>192 seconds (192057 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,11 +75,13 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.appmodule.testscript.Parents_Login_Script.Click_on_Homework()'><b>Click_on_Homework</b><br>Test class: com.appmodule.testscript.Parents_Login_Script</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.appmodule.Generic_method.Generic_class.fn_mouseOverClick(Generic_class.java:177)
-	at com.appmodule.perform_pageclass.Perform_PageClass.ClickOnHomework(Perform_PageClass.java:85)
-	at com.appmodule.testscript.Parents_Login_Script.Click_on_Homework(Parents_Login_Script.java:116)
+<td title='com.appmodule.testscript.Teacher_Login_Script.Click_on_AttendanceMarks()'><b>Click_on_AttendanceMarks</b><br>Test class: com.appmodule.testscript.Teacher_Login_Script</td>
+<td><div><pre>java.lang.IllegalArgumentException: Must provide a location for a move action.
+	at org.openqa.selenium.interactions.MoveMouseAction.&lt;init&gt;(MoveMouseAction.java:34)
+	at org.openqa.selenium.interactions.Actions.moveToElement(Actions.java:255)
+	at com.appmodule.Generic_method.Generic_class.fn_DoubleMouseOverClick(Generic_class.java:199)
+	at com.appmodule.perform_pageclass.Perform_PageClass.Clickonattendancemarks(Perform_PageClass.java:114)
+	at com.appmodule.testscript.Teacher_Login_Script.Click_on_AttendanceMarks(Teacher_Login_Script.java:110)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -104,11 +106,335 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div><a href='#' onClick='toggleBox("stack-trace34073107", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace34073107'><pre>java.lang.NullPointerException
+</pre></div><a href='#' onClick='toggleBox("stack-trace1123321137", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1123321137'><pre>java.lang.IllegalArgumentException: Must provide a location for a move action.
+	at org.openqa.selenium.interactions.MoveMouseAction.&lt;init&gt;(MoveMouseAction.java:34)
+	at org.openqa.selenium.interactions.Actions.moveToElement(Actions.java:255)
+	at com.appmodule.Generic_method.Generic_class.fn_DoubleMouseOverClick(Generic_class.java:199)
+	at com.appmodule.perform_pageclass.Perform_PageClass.Clickonattendancemarks(Perform_PageClass.java:114)
+	at com.appmodule.testscript.Teacher_Login_Script.Click_on_AttendanceMarks(Teacher_Login_Script.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+</pre></div></td>
+<td>6</td>
+<td>com.appmodule.testscript.Teacher_Login_Script@7dc36524</td></tr>
+<tr>
+<td title='com.appmodule.testscript.Teacher_Login_Script.Click_on_AttendanceReport()'><b>Click_on_AttendanceReport</b><br>Test class: com.appmodule.testscript.Teacher_Login_Script</td>
+<td><div><pre>java.lang.IllegalArgumentException: Must provide a location for a move action.
+	at org.openqa.selenium.interactions.MoveMouseAction.&lt;init&gt;(MoveMouseAction.java:34)
+	at org.openqa.selenium.interactions.Actions.moveToElement(Actions.java:255)
+	at com.appmodule.Generic_method.Generic_class.fn_DoubleMouseOverClick(Generic_class.java:199)
+	at com.appmodule.perform_pageclass.Perform_PageClass.ClickonAttendance_Report(Perform_PageClass.java:122)
+	at com.appmodule.testscript.Teacher_Login_Script.Click_on_AttendanceReport(Teacher_Login_Script.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+</pre></div><a href='#' onClick='toggleBox("stack-trace95369743", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace95369743'><pre>java.lang.IllegalArgumentException: Must provide a location for a move action.
+	at org.openqa.selenium.interactions.MoveMouseAction.&lt;init&gt;(MoveMouseAction.java:34)
+	at org.openqa.selenium.interactions.Actions.moveToElement(Actions.java:255)
+	at com.appmodule.Generic_method.Generic_class.fn_DoubleMouseOverClick(Generic_class.java:199)
+	at com.appmodule.perform_pageclass.Perform_PageClass.ClickonAttendance_Report(Perform_PageClass.java:122)
+	at com.appmodule.testscript.Teacher_Login_Script.Click_on_AttendanceReport(Teacher_Login_Script.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+</pre></div></td>
+<td>5</td>
+<td>com.appmodule.testscript.Teacher_Login_Script@7dc36524</td></tr>
+<tr>
+<td title='com.appmodule.testscript.Teacher_Login_Script.Click_on_HealthStatus()'><b>Click_on_HealthStatus</b><br>Test class: com.appmodule.testscript.Teacher_Login_Script</td>
+<td><div><pre>java.lang.NullPointerException
 	at com.appmodule.Generic_method.Generic_class.fn_mouseOverClick(Generic_class.java:177)
-	at com.appmodule.perform_pageclass.Perform_PageClass.ClickOnHomework(Perform_PageClass.java:85)
-	at com.appmodule.testscript.Parents_Login_Script.Click_on_Homework(Parents_Login_Script.java:116)
+	at com.appmodule.perform_pageclass.Perform_PageClass.ClickonHealthstatus(Perform_PageClass.java:155)
+	at com.appmodule.testscript.Teacher_Login_Script.Click_on_HealthStatus(Teacher_Login_Script.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1547398254", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1547398254'><pre>java.lang.NullPointerException
+	at com.appmodule.Generic_method.Generic_class.fn_mouseOverClick(Generic_class.java:177)
+	at com.appmodule.perform_pageclass.Perform_PageClass.ClickonHealthstatus(Perform_PageClass.java:155)
+	at com.appmodule.testscript.Teacher_Login_Script.Click_on_HealthStatus(Teacher_Login_Script.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+</pre></div></td>
+<td>4</td>
+<td>com.appmodule.testscript.Teacher_Login_Script@7dc36524</td></tr>
+<tr>
+<td title='com.appmodule.testscript.Teacher_Login_Script.Click_on_MarksReview()'><b>Click_on_MarksReview</b><br>Test class: com.appmodule.testscript.Teacher_Login_Script</td>
+<td><div><pre>java.lang.IllegalArgumentException: Must provide a location for a move action.
+	at org.openqa.selenium.interactions.MoveMouseAction.&lt;init&gt;(MoveMouseAction.java:34)
+	at org.openqa.selenium.interactions.Actions.moveToElement(Actions.java:255)
+	at com.appmodule.Generic_method.Generic_class.fn_DoubleMouseOverClick(Generic_class.java:199)
+	at com.appmodule.perform_pageclass.Perform_PageClass.Clickonmarksreview(Perform_PageClass.java:137)
+	at com.appmodule.testscript.Teacher_Login_Script.Click_on_MarksReview(Teacher_Login_Script.java:134)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+</pre></div><a href='#' onClick='toggleBox("stack-trace533415944", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace533415944'><pre>java.lang.IllegalArgumentException: Must provide a location for a move action.
+	at org.openqa.selenium.interactions.MoveMouseAction.&lt;init&gt;(MoveMouseAction.java:34)
+	at org.openqa.selenium.interactions.Actions.moveToElement(Actions.java:255)
+	at com.appmodule.Generic_method.Generic_class.fn_DoubleMouseOverClick(Generic_class.java:199)
+	at com.appmodule.perform_pageclass.Perform_PageClass.Clickonmarksreview(Perform_PageClass.java:137)
+	at com.appmodule.testscript.Teacher_Login_Script.Click_on_MarksReview(Teacher_Login_Script.java:134)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+</pre></div></td>
+<td>5</td>
+<td>com.appmodule.testscript.Teacher_Login_Script@7dc36524</td></tr>
+<tr>
+<td title='com.appmodule.testscript.Teacher_Login_Script.Click_on_MarksreviewreportClasswise()'><b>Click_on_MarksreviewreportClasswise</b><br>Test class: com.appmodule.testscript.Teacher_Login_Script</td>
+<td><div><pre>java.lang.IllegalArgumentException: Must provide a location for a move action.
+	at org.openqa.selenium.interactions.MoveMouseAction.&lt;init&gt;(MoveMouseAction.java:34)
+	at org.openqa.selenium.interactions.Actions.moveToElement(Actions.java:255)
+	at com.appmodule.Generic_method.Generic_class.fn_DoubleMouseOverClick(Generic_class.java:199)
+	at com.appmodule.perform_pageclass.Perform_PageClass.Clickonmarksreviewreportclasswise(Perform_PageClass.java:148)
+	at com.appmodule.testscript.Teacher_Login_Script.Click_on_MarksreviewreportClasswise(Teacher_Login_Script.java:142)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+</pre></div><a href='#' onClick='toggleBox("stack-trace48305285", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace48305285'><pre>java.lang.IllegalArgumentException: Must provide a location for a move action.
+	at org.openqa.selenium.interactions.MoveMouseAction.&lt;init&gt;(MoveMouseAction.java:34)
+	at org.openqa.selenium.interactions.Actions.moveToElement(Actions.java:255)
+	at com.appmodule.Generic_method.Generic_class.fn_DoubleMouseOverClick(Generic_class.java:199)
+	at com.appmodule.perform_pageclass.Perform_PageClass.Clickonmarksreviewreportclasswise(Perform_PageClass.java:148)
+	at com.appmodule.testscript.Teacher_Login_Script.Click_on_MarksreviewreportClasswise(Teacher_Login_Script.java:142)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+</pre></div></td>
+<td>8</td>
+<td>com.appmodule.testscript.Teacher_Login_Script@7dc36524</td></tr>
+<tr>
+<td title='com.appmodule.testscript.Teacher_Login_Script.Click_on_PerformAssignment()'><b>Click_on_PerformAssignment</b><br>Test class: com.appmodule.testscript.Teacher_Login_Script</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.appmodule.Generic_method.Generic_class.fn_mouseOverClick(Generic_class.java:177)
+	at com.appmodule.perform_pageclass.Perform_PageClass.ClickonPerformAssignment(Perform_PageClass.java:129)
+	at com.appmodule.testscript.Teacher_Login_Script.Click_on_PerformAssignment(Teacher_Login_Script.java:126)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+</pre></div><a href='#' onClick='toggleBox("stack-trace347091104", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace347091104'><pre>java.lang.NullPointerException
+	at com.appmodule.Generic_method.Generic_class.fn_mouseOverClick(Generic_class.java:177)
+	at com.appmodule.perform_pageclass.Perform_PageClass.ClickonPerformAssignment(Perform_PageClass.java:129)
+	at com.appmodule.testscript.Teacher_Login_Script.Click_on_PerformAssignment(Teacher_Login_Script.java:126)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -135,177 +461,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
 </pre></div></td>
 <td>3</td>
-<td>com.appmodule.testscript.Parents_Login_Script@7dc7cbad</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Parents_Login_Script.click_on_Atteandance()'><b>click_on_Atteandance</b><br>Test class: com.appmodule.testscript.Parents_Login_Script</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.appmodule.Generic_method.Generic_class.fn_mouseOverClick(Generic_class.java:177)
-	at com.appmodule.perform_pageclass.Perform_PageClass.clickonattendance(Perform_PageClass.java:77)
-	at com.appmodule.testscript.Parents_Login_Script.click_on_Atteandance(Parents_Login_Script.java:101)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div><a href='#' onClick='toggleBox("stack-trace694069884", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace694069884'><pre>java.lang.NullPointerException
-	at com.appmodule.Generic_method.Generic_class.fn_mouseOverClick(Generic_class.java:177)
-	at com.appmodule.perform_pageclass.Perform_PageClass.clickonattendance(Perform_PageClass.java:77)
-	at com.appmodule.testscript.Parents_Login_Script.click_on_Atteandance(Parents_Login_Script.java:101)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div></td>
-<td>3</td>
-<td>com.appmodule.testscript.Parents_Login_Script@7dc7cbad</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Parents_Login_Script.click_on_marks()'><b>click_on_marks</b><br>Test class: com.appmodule.testscript.Parents_Login_Script</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//h3[contains(text(), &apos;Report Book&apos;)]&quot;}
-  (Session info: chrome=51.0.2704.103)
-  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 10.0 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 40.02 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.47.0&apos;, revision: &apos;0e4837e&apos;, time: &apos;2015-07-29 22:56:05&apos;
-System info: host: &apos;kuldeep&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_25&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\YKULD_~1\AppData\Local\Temp\scoped_dir8612_19269}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=51.0.2704.103, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: ba9bed4ed0fb4cd94bd044e8497f36a9
-*** Element info: {Using=xpath, value=//h3[contains(text(), &apos;Report Book&apos;)]}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:445)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:340)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy7.isDisplayed(Unknown Source)
-	at com.appmodule.Generic_method.Generic_class.fn_GetPageLoadTime(Generic_class.java:654)
-	at com.appmodule.testscript.Parents_Login_Script.click_on_marks(Parents_Login_Script.java:110)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1193398802", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1193398802'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//h3[contains(text(), &apos;Report Book&apos;)]&quot;}
-  (Session info: chrome=51.0.2704.103)
-  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 10.0 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 40.02 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.47.0&apos;, revision: &apos;0e4837e&apos;, time: &apos;2015-07-29 22:56:05&apos;
-System info: host: &apos;kuldeep&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_25&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\YKULD_~1\AppData\Local\Temp\scoped_dir8612_19269}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=51.0.2704.103, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: ba9bed4ed0fb4cd94bd044e8497f36a9
-*** Element info: {Using=xpath, value=//h3[contains(text(), &apos;Report Book&apos;)]}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:445)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:340)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy7.isDisplayed(Unknown Source)
-	at com.appmodule.Generic_method.Generic_class.fn_GetPageLoadTime(Generic_class.java:654)
-	at com.appmodule.testscript.Parents_Login_Script.click_on_marks(Parents_Login_Script.java:110)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div></td>
-<td>46</td>
-<td>com.appmodule.testscript.Parents_Login_Script@7dc7cbad</td></tr>
+<td>com.appmodule.testscript.Teacher_Login_Script@7dc36524</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -315,77 +471,89 @@ Session ID: ba9bed4ed0fb4cd94bd044e8497f36a9
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.appmodule.testscript.Parents_Login_Script.click_on_Announcement()'><b>click_on_Announcement</b><br>Test class: com.appmodule.testscript.Parents_Login_Script<br/>
-<a href="#Output-1527214863" onClick='toggleBox("Output-1527214863", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.appmodule.testscript.Teacher_Login_Script.Clcik_on_Event()'><b>Clcik_on_Event</b><br>Test class: com.appmodule.testscript.Teacher_Login_Script<br/>
+<a href="#Output-1464177809" onClick='toggleBox("Output-1464177809", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1527214863" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1527214863">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/announcements/myannouncements Actual URL-http://www.fliplearn.com/index.php/announcements/myannouncements<br/>
-</div>
-</td>
-<td></td>
-<td>46</td>
-<td>com.appmodule.testscript.Parents_Login_Script@7dc7cbad</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Parents_Login_Script.click_on_Events()'><b>click_on_Events</b><br>Test class: com.appmodule.testscript.Parents_Login_Script<br/>
-<a href="#Output-1086849943" onClick='toggleBox("Output-1086849943", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1086849943" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1086849943">
+<a href="#Output-1464177809" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1464177809">
 URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/events/index Actual URL-http://www.fliplearn.com/index.php/events/index<br/>
 </div>
 </td>
 <td></td>
-<td>7</td>
-<td>com.appmodule.testscript.Parents_Login_Script@7dc7cbad</td></tr>
+<td>16</td>
+<td>com.appmodule.testscript.Teacher_Login_Script@7dc36524</td></tr>
 <tr>
-<td title='com.appmodule.testscript.Parents_Login_Script.click_on_Gallery()'><b>click_on_Gallery</b><br>Test class: com.appmodule.testscript.Parents_Login_Script<br/>
-<a href="#Output-212963786" onClick='toggleBox("Output-212963786", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.appmodule.testscript.Teacher_Login_Script.Click_on_Announcement()'><b>Click_on_Announcement</b><br>Test class: com.appmodule.testscript.Teacher_Login_Script<br/>
+<a href="#Output-1302725372" onClick='toggleBox("Output-1302725372", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-212963786" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-212963786">
+<a href="#Output-1302725372" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1302725372">
+URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/announcements/index Actual URL-http://www.fliplearn.com/index.php/announcements/index<br/>
+</div>
+</td>
+<td></td>
+<td>12</td>
+<td>com.appmodule.testscript.Teacher_Login_Script@7dc36524</td></tr>
+<tr>
+<td title='com.appmodule.testscript.Teacher_Login_Script.Click_on_Gallery()'><b>Click_on_Gallery</b><br>Test class: com.appmodule.testscript.Teacher_Login_Script<br/>
+<a href="#Output-1547883191" onClick='toggleBox("Output-1547883191", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1547883191" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1547883191">
 URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/pictureGallery Actual URL-http://www.fliplearn.com/index.php/pictureGallery<br/>
 </div>
 </td>
 <td></td>
-<td>10</td>
-<td>com.appmodule.testscript.Parents_Login_Script@7dc7cbad</td></tr>
+<td>15</td>
+<td>com.appmodule.testscript.Teacher_Login_Script@7dc36524</td></tr>
 <tr>
-<td title='com.appmodule.testscript.Parents_Login_Script.click_on_Teacher()'><b>click_on_Teacher</b><br>Test class: com.appmodule.testscript.Parents_Login_Script<br/>
-<a href="#Output-24039137" onClick='toggleBox("Output-24039137", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.appmodule.testscript.Teacher_Login_Script.Click_on_Message()'><b>Click_on_Message</b><br>Test class: com.appmodule.testscript.Teacher_Login_Script<br/>
+<a href="#Output-1272051933" onClick='toggleBox("Output-1272051933", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-24039137" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-24039137">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/user/Tdirectory Actual URL-http://www.fliplearn.com/index.php/user/Tdirectory<br/>
-</div>
-</td>
-<td></td>
-<td>7</td>
-<td>com.appmodule.testscript.Parents_Login_Script@7dc7cbad</td></tr>
-<tr>
-<td title='com.appmodule.testscript.Parents_Login_Script.click_on_message()'><b>click_on_message</b><br>Test class: com.appmodule.testscript.Parents_Login_Script<br/>
-<a href="#Output-547923534" onClick='toggleBox("Output-547923534", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-547923534" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-547923534">
+<a href="#Output-1272051933" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1272051933">
 URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/messages Actual URL-http://www.fliplearn.com/index.php/messages<br/>
 </div>
 </td>
 <td></td>
-<td>7</td>
-<td>com.appmodule.testscript.Parents_Login_Script@7dc7cbad</td></tr>
+<td>11</td>
+<td>com.appmodule.testscript.Teacher_Login_Script@7dc36524</td></tr>
 <tr>
-<td title='com.appmodule.testscript.Parents_Login_Script.click_on_wall()'><b>click_on_wall</b><br>Test class: com.appmodule.testscript.Parents_Login_Script<br/>
-<a href="#Output-1793899405" onClick='toggleBox("Output-1793899405", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.appmodule.testscript.Teacher_Login_Script.Click_on_Student()'><b>Click_on_Student</b><br>Test class: com.appmodule.testscript.Teacher_Login_Script<br/>
+<a href="#Output-882471736" onClick='toggleBox("Output-882471736", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1793899405" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1793899405">
-URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/wallPosts Actual URL-http://www.fliplearn.com/index.php/wallPosts<br/>
+<a href="#Output-882471736" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-882471736">
+URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/user/directory Actual URL-http://www.fliplearn.com/index.php/user/directory<br/>
 </div>
 </td>
 <td></td>
 <td>11</td>
-<td>com.appmodule.testscript.Parents_Login_Script@7dc7cbad</td></tr>
+<td>com.appmodule.testscript.Teacher_Login_Script@7dc36524</td></tr>
+<tr>
+<td title='com.appmodule.testscript.Teacher_Login_Script.Click_on_Teacher()'><b>Click_on_Teacher</b><br>Test class: com.appmodule.testscript.Teacher_Login_Script<br/>
+<a href="#Output-1601935322" onClick='toggleBox("Output-1601935322", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1601935322" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1601935322">
+URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/user/Tdirectory Actual URL-http://www.fliplearn.com/index.php/user/Tdirectory<br/>
+</div>
+</td>
+<td></td>
+<td>13</td>
+<td>com.appmodule.testscript.Teacher_Login_Script@7dc36524</td></tr>
+<tr>
+<td title='com.appmodule.testscript.Teacher_Login_Script.click_on_Wall()'><b>click_on_Wall</b><br>Test class: com.appmodule.testscript.Teacher_Login_Script<br/>
+<a href="#Output-352776719" onClick='toggleBox("Output-352776719", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-352776719" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-352776719">
+URL Verification Passed. Expected URL=http://www.fliplearn.com/index.php/wallPosts Actual URL-http://www.fliplearn.com/index.php/wallPosts<br/>
+</div>
+</td>
+<td></td>
+<td>12</td>
+<td>com.appmodule.testscript.Teacher_Login_Script@7dc36524</td></tr>
 </table><p>
 </body>
 </html>

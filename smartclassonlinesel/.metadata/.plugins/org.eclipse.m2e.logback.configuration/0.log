@@ -43,3 +43,4 @@ Caused by: java.io.IOException: tmpFile.renameTo(classFile) failed
 	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:453) ~[na:na]
 	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:625) ~[na:na]
 	... 33 common frames omitted
+2016-07-08 12:18:44,130 [Framework stop] INFO  o.e.j.server.handler.ContextHandler - stopped o.e.j.s.ServletContextHandler{/wse,null}

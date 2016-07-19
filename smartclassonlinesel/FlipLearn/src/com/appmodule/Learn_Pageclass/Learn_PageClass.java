@@ -1,7 +1,5 @@
 package com.appmodule.Learn_Pageclass;
 
-import java.io.IOException;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -24,35 +22,14 @@ public class Learn_PageClass extends Generic_class{
 	public static WebElement mathguru;
 	
 /*******************************************************************************************************************/
-	public static void SL_ClickOnMathGuru() throws Exception, IOException{
-		Main_Manu_Item=fn_GetText(learn);
-		Main_SubMainu_Item=fn_GetText(mathguru);
-		fn_mouseOverClick(DriverObj, learn, mathguru);
+	public static void myclassroom(){
 		try{
-			fn_mouseOverClick(DriverObj, learn, mathguru);;
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-	}
-	
-	public static void ClickonMyClassRoom(){
-		fn_mouseOverClick(DriverObj, learn, myclassroom);
-		try{
+			fn_mouseOverClick(DriverObj, learn,myclassroom);
 			Thread.sleep(2000);
-			fn_mouseOverClick(DriverObj, learn, myclassroom);
+			
 		}catch(Exception e){
-			e.printStackTrace();
+			
 		}
 	}
-	public static void MouseOverOnSmartClass(){
-		fn_mouseOverClick(DriverObj, learn, smartclass);
-		try{
-			Thread.sleep(2000);
-			fn_mouseOverClick(DriverObj, learn, smartclass);
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-	}
-	
 	
 }

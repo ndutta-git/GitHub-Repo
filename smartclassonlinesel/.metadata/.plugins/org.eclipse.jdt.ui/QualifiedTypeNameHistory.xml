@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.testng.Reporter"/>
-<fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="java.lang.Throwable"/>
 <fullyQualifiedTypeName name="com.appmodule.share_PageClass.Share_PageClass"/>
 <fullyQualifiedTypeName name="com.appmodule.share_PageClass.Gallery_PageClass"/>
 <fullyQualifiedTypeName name="com.appmodule.share_PageClass.Events_PageClass"/>
 <fullyQualifiedTypeName name="com.appmodule.perform_pageclass.Dashboard_PageClass"/>
 <fullyQualifiedTypeName name="org.apache.xmlbeans.impl.xb.xsdschema.Public"/>
-<fullyQualifiedTypeName name="com.appmodule.share_PageClass.Message_Pageclass"/>
 <fullyQualifiedTypeName name="javax.print.attribute.standard.MediaSize.NA"/>
 <fullyQualifiedTypeName name="com.appmodule.commannevigation.CommanNevigation_Pageclass"/>
 <fullyQualifiedTypeName name="com.appmodule.share_PageClass.Announement_PageClass"/>
@@ -28,14 +25,11 @@
 <fullyQualifiedTypeName name="com.appmodule.admin_pageclass.Attendance_Report_PageClass"/>
 <fullyQualifiedTypeName name="com.appmodule.admin_pageclass.AdminMenu_PageClass"/>
 <fullyQualifiedTypeName name="com.appmodule.admin_pageclass.User_Report_PageClass"/>
-<fullyQualifiedTypeName name="com.appmodule.share_PageClass.Wall_PageClass"/>
 <fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="org.openqa.selenium.Keys"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="org.openqa.selenium.support.PageFactory"/>
 <fullyQualifiedTypeName name="com.appmodule.homepageclass.Loginpage_Pageclass"/>
-<fullyQualifiedTypeName name="com.appmodule.homepageclass.IndexHomePage_PageClass"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="org.testng.Assert"/>
 <fullyQualifiedTypeName name="org.testng.annotations.BeforeTest"/>
@@ -59,5 +53,11 @@
 <fullyQualifiedTypeName name="autoitx4java.AutoItX"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="com.appmodule.share_PageClass.Wall_PageClass"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.support.PageFactory"/>
+<fullyQualifiedTypeName name="com.appmodule.share_PageClass.Message_Pageclass"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="com.appmodule.homepageclass.IndexHomePage_PageClass"/>
+<fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+<fullyQualifiedTypeName name="com.appmodule.perform_pageclass.HomeWork_PageClass"/>
 </qualifiedTypeNameHistroy>

@@ -2,9 +2,7 @@ package com.appmodule.testscript;
 
 import java.util.HashMap;
 
-import org.apache.commons.logging.impl.Log4JLogger;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -19,7 +17,7 @@ import com.appmodule.homepageclass.Loginpage_Pageclass;
 public class Student_Login_Script extends Generic_class{
 	@SuppressWarnings("rawtypes")
 	public static HashMap testData_HM=new HashMap();
-@SuppressWarnings({ "static-access", "unused" })
+@SuppressWarnings({ "static-access", })
 @Parameters("Browser")	
 @BeforeTest
 public static void Login_validation() throws Exception{
@@ -28,8 +26,7 @@ public static void Login_validation() throws Exception{
 	Login_Role="Student";
 	ResultSheetPath="FlipLearn/Results/Result.xlsx";
 	ResultFolder="C:/Users/ykuld_000/Desktop/smartclassonlinesel/FlipLearn/Results";
-	Logger logger=Logger.getLogger(Log4JLogger.class.getName());
-	PropertyConfigurator.configure("Log4j.properties");
+	DOMConfigurator.configure("log4j.xml");
 	HomePage_PagecClass	loginobj=fn_OpenApp("CH", "http://www.fliplearn.com");
      fn_FetchExcelData(1);
      fn_GetPageLoadTime(NavigationObj.Fliplearnlogo);

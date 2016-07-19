@@ -3,7 +3,9 @@ package com.appmodule.admin_pageclass;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Add_Teacher_PageClass {
+import com.appmodule.Generic_method.Generic_class;
+
+public class Add_Teacher_PageClass extends Generic_class{
 
 	@FindBy(id="myModalLabel")
 	public static WebElement addteacherheaderlogo;
