@@ -14,8 +14,10 @@ import com.appmodule.Generic_method.Log;
 import com.appmodule.homepageclass.HomePage_PagecClass;
 import com.appmodule.homepageclass.IndexHomePage_PageClass;
 import com.appmodule.homepageclass.Loginpage_Pageclass;
+import com.appmodule.share_PageClass.Message_Pageclass;
 import com.appmodule.share_PageClass.Wall_PageClass;
 
+@SuppressWarnings("unused")
 public class Parents_Login_Script extends Generic_class{
 
 	@SuppressWarnings("rawtypes")
@@ -55,7 +57,7 @@ public static void closebrowser(){
 
 @Test(priority=1)
 public static void click_on_wall() throws IOException, Exception{
-      IndexHomePage_PageClass.Clickonwalllink();
+      IndexHomePage_PageClass.clickOnWall();
       fn_GetPageLoadTime(Wall_PageClass.wall_logo);
        verifyUrl("WallPage_Url", 1);
        Log.info("Wall page open");
@@ -71,7 +73,7 @@ public static void click_on_message() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=3)
 public static void click_on_Gallery() throws IOException, Exception{
-	IndexHomePage_PageClass.Clickongallerylink();
+	IndexHomePage_PageClass.clickOnGallery();
 	fn_GetPageLoadTime(NavigationObj.Gallery);
 	verifyUrl("GalleryPage_Url", 1);
 	Log.info("Gallery page is open");
@@ -79,7 +81,7 @@ public static void click_on_Gallery() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=4)
 public static void click_on_Events() throws IOException, Exception{
-	IndexHomePage_PageClass.Clickonevent();
+	IndexHomePage_PageClass.clickOnEvent();
 	fn_GetPageLoadTime(NavigationObj.Events);
 	verifyUrl("EventPage_Url", 1);
 	Log.info("Event page is open");
@@ -87,7 +89,7 @@ public static void click_on_Events() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=5)
 public static void click_on_Announcement() throws IOException, Exception{
-	IndexHomePage_PageClass.Clickonannouncement();
+	IndexHomePage_PageClass.clickOnAnnouncement();
 	fn_GetPageLoadTime(NavigationObj.Announcements);
 	verifyUrl("AnnouncementPage_Url", 1);
 	Log.info("Announcement page is open");
@@ -95,7 +97,7 @@ public static void click_on_Announcement() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=6)
 public static void click_on_Teacher() throws IOException, Exception{
-	IndexHomePage_PageClass.ClickonTeacher();
+	IndexHomePage_PageClass.clickOnTeacher();
 	fn_GetPageLoadTime(NavigationObj.Teachers);
 	verifyUrl("TeacherPage_URL", 1);
 	Log.info("Teacher directory open");
@@ -103,7 +105,7 @@ public static void click_on_Teacher() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=7)
 public static void click_on_Atteandance() throws Exception, IOException{
-	IndexHomePage_PageClass.mouseoverclickonattendance();
+	IndexHomePage_PageClass.clickOnAttendance();
 	fn_GetPageLoadTime(NavigationObj.attendance_report);
 	verifyUrl("AttendancePage_Url", 1);
 	Log.info("Attendance page is open");
@@ -111,7 +113,7 @@ public static void click_on_Atteandance() throws Exception, IOException{
 @SuppressWarnings("static-access")
 @Test(priority=8)
 public static void click_on_marks() throws Exception, IOException{
-	IndexHomePage_PageClass.mouseoverclickonmarks();
+	IndexHomePage_PageClass.clickOnMarks();
 	fn_GetPageLoadTime(NavigationObj.Parent_marks_link);
 	verifyUrl("MarksPage_URL", 1);
 	Log.info("Merks page is open");

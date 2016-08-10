@@ -9,7 +9,7 @@ public class MathGuru_PageClass extends Generic_class{
 		
 	
 	public static void GetClassOfMathGuru() throws IOException, Exception{
-		Learn_PageClass.SL_ClickOnMathGuru();
+		//Learn_PageClass.SL_ClickOnMathGuru();
 		Thread.sleep(2000);
 	}
 }

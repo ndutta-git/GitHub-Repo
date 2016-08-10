@@ -46,7 +46,7 @@ public static void closebrowser(){
 
 @Test(priority=1)
 public static void click_walllink() throws Exception{
-    IndexHomePage_PageClass.Clickonwalllink();
+    IndexHomePage_PageClass.clickOnWall();
      fn_GetPageLoadTime(IndexHomePage_PageClass.walllogo_onmain);
      verifyUrl("WallPage_Url", 1);
 }
@@ -61,42 +61,45 @@ public static void click_message() throws Exception{
 @SuppressWarnings({ "static-access", })
 @Test(priority=3)
 public static void click_gallery() throws Exception{
-	IndexHomePage_PageClass.Clickongallerylink();
+	IndexHomePage_PageClass.clickOnGallery();
     fn_GetPageLoadTime(NavigationObj.Gallery);
     verifyUrl("GalleryPage_Url", 1);
 }
 @SuppressWarnings({  "static-access" })
 @Test(priority=4)
 public static void click_event() throws Exception{
-	IndexHomePage_PageClass.Clickonevent();
+	IndexHomePage_PageClass.clickOnEvent();
      fn_GetPageLoadTime(NavigationObj.Events);
      verifyUrl("EventPage_Url", 1);
 }
 @SuppressWarnings({ "static-access" })
 @Test(priority=5)
 public static void click_announcement() throws Exception{
-	IndexHomePage_PageClass.Clickonannouncement();
+	IndexHomePage_PageClass.clickOnAnnouncement();
 	    fn_GetPageLoadTime(NavigationObj.Announcements);
 	    verifyUrl("AnnouncementPage_Url", 1);
 }
 @SuppressWarnings({ "static-access" })
 @Test(priority=6)
 public static void click_attendance() throws Exception{
-      IndexHomePage_PageClass.mouseoverclickonattendance();
+	IndexHomePage_PageClass attendance=PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
+	attendance.clickOnAttendance();
          fn_GetPageLoadTime(NavigationObj.attendance_report);
          verifyUrl("AttendancePage_Url", 1);
 }
 @SuppressWarnings({ "static-access" })
 @Test(priority=7)
 public static void click_marks() throws Exception{
-    IndexHomePage_PageClass.mouseoverclickonmarks();
+	IndexHomePage_PageClass Marks=PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
+	Marks.clickOnMarks();
      fn_GetPageLoadTime(NavigationObj.student_marks);
    verifyUrl("MarksPage_URL",1);
 }
 @SuppressWarnings({ "static-access" })
 @Test(priority=8)
 public static void click_dashboard() throws Exception{
-	IndexHomePage_PageClass.mouseoverclickondashboard();
+	IndexHomePage_PageClass Dashboard=PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
+	Dashboard.clickOnDashboard();
 	fn_GetPageLoadTime(NavigationObj.Smartclass_Dashboard);
      verifyUrl("DashboardPage_URL",1);
 }

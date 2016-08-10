@@ -52,6 +52,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.ITestResult;
 import org.testng.Reporter;
 
 import autoitx4java.AutoItX;
@@ -73,9 +74,10 @@ public class Generic_class {
 	public static String Login_Role;
 	public static String TestCaseName;
 	public static String Username;
+	public static String BrowserType;
 	public static String User_Role;
-	public static String Main_Manu_Item;
-	public static String Main_SubMainu_Item;
+	public static String ModuleName;
+	public static String SubModuleName;
 	public static String Page_Load_time;
 	public static String Sub_Manu_Item;
 	public static String ResultSheetPath;
@@ -108,7 +110,10 @@ public class Generic_class {
 		fn_Url(DriverObj, URL );
 		DriverObj.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		DriverObj.manage().window().maximize();
+		BrowserType=BrowserName;
         return DriverObj;
+
+		
 		
 	}
 	public static HomePage_PagecClass fn_OpenApp(String BrowserName, String URL ){
@@ -141,11 +146,6 @@ public static void fn_SimpleClick(WebElement ElementToClick ){
 			  DriverObj.navigate().refresh();
 				ElementToClick.click();
 			}
-			try{
-				DriverObj.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);	
-			}catch(Exception e){
-				
-			}
 			try {
 				Thread.sleep(3000);
 			} catch (InterruptedException e) {
@@ -162,10 +162,15 @@ public static void fn_Select(WebElement webelementname){
 			System.out.println("Allready Selected");
 		}
 	}
-public static void fn_MouseOver(WebDriver DriverObj, WebElement ElementToMouseOver){
-		Actions Actobj=new Actions(DriverObj);
-		Actobj.moveToElement(ElementToMouseOver).build().perform();
-	}
+public static void fn_MouseOver(WebDriver DriverObj, WebElement ElementToMouseOver) throws Exception{
+	try{
+		new Actions(DriverObj).moveToElement(ElementToMouseOver).build().perform();
+	}catch(Exception e){
+		Thread.sleep(3000);	
+		DriverObj.navigate().refresh();
+		new Actions(DriverObj).moveToElement(ElementToMouseOver).build().perform();
+	 }
+}
 	
 public static void fn_mouseOverClick(WebDriver DriverObj,WebElement Elementtomove, WebElement ElementToClick){
 		
@@ -226,13 +231,13 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 		   if(ActualStatus==true){
 		    	Reporter.log("Display Verification Passed. "+ObjName+ "is Displaying at "+PageName);
 		    	   String ActualValues="Visible";
-				   String[] ResultArr=fn_CreateArray(ActualValues,"Passed");
-				  // fn_WriteResultToExcel(ResultArr);
+		    	   String[] ResultArr=fn_CreateArray(ExpectedValues,ActualValues,ObjName,"Passed");
+				   fn_WriteResultToExcel(ResultArr);
 		    }else{
 		    	String msg="Display Verification Failed. "+ObjName+ "is not Displaying at "+PageName;
 		    	String ActualValues="Not Visible";
-				String[] ResultArr=fn_CreateArray(ActualValues,"Failed");
-				//fn_WriteResultToExcel(ResultArr);
+		    	 String[] ResultArr=fn_CreateArray(ExpectedValues,ActualValues,ObjName,"Passed");
+				fn_WriteResultToExcel(ResultArr);
 		    	Assert.assertTrue(false);
 		    	
 		    }
@@ -255,13 +260,13 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 		if(Actualstatus==true){
 			Reporter.log("Enabled verification passed. "+objname+ "is Enabled at "+buttontxt);
 			String Actualvalue="Enabled";
-	       String[] resultArr=fn_CreateArray( Actualvalue,"working");
-	      // fn_WriteResultToExcel(resultArr);
+	       String[] resultArr=fn_CreateArray(Expectedvalue, buttontxt, objname, "Pass");
+	       fn_WriteResultToExcel(resultArr);
 		}else{
 			String message="Enabled verification is failed. "+objname+ "is Enabled at "+buttontxt;
 			String Actualvalue="Not Enabled";
-	        String[] resultarr=fn_CreateArray(Actualvalue, "Failed");
-	       // fn_WriteResultToExcel(resultarr);
+	        String[] resultarr=fn_CreateArray(Expectedvalue, buttontxt, objname, "Pass");
+	       fn_WriteResultToExcel(resultarr);
 	        Assert.assertTrue(false);
 		}
 		}catch(Throwable t){
@@ -281,12 +286,12 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 	 public static void fn_WriteResultToExcel(String[] Arr_ResultToWrite) throws IOException, InvalidFormatException{
  		
 		   File ResultFileObj=new File(ResultSheetPath);
-		   if(ResultFileObj.exists()==false || ResultSheetPath.contains(Login_Role)==false){
+		   if(ResultFileObj.exists()==false || ResultSheetPath.contains(BrowserType)==false){
 			   fn_CreateAndFormatExcel();
 		   	}
 		   fn_UpdateExcelResults(Arr_ResultToWrite);
 	     }
-	 public static String[] fn_CreateArray(String ActualText,String Status) throws IOException{
+	 public static String[] fn_CreateArray(String ExpectedText,String ActualText,String ObjectName, String Status) throws IOException{
 			String PageTitle="";
 			try{
 				PageTitle=DriverObj.getTitle();
@@ -294,39 +299,40 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 			} 
 			 if (Status=="Failed"){
 				 String snapshotPath=fn_TakeSnapshot();
-				 String[] ReportExcelArr={Username,Login_Role,Main_Manu_Item,Main_SubMainu_Item,Sub_Manu_Item,Page_Load_time,PageTitle,ActualText,Status, snapshotPath};
+				 String[] ReportExcelArr={ModuleName,SubModuleName,TestCaseName,PageTitle,ObjectName,ExpectedText,ActualText,Status, snapshotPath};
 				 return ReportExcelArr;
 			 }else{
-				 String[] ReportExcelArr={Username,Login_Role,Main_Manu_Item,Main_SubMainu_Item,Sub_Manu_Item,Page_Load_time,PageTitle,ActualText,Status};	 
+				 String[] ReportExcelArr={ModuleName,SubModuleName,TestCaseName,PageTitle,ObjectName,ExpectedText,ActualText,Status};	 
 				 return ReportExcelArr;
-			 }
+			 }	 
 	 }
-			 public static void fn_CreateAndFormatExcel() throws IOException{
-		     		XSSFWorkbook WbookObj=new XSSFWorkbook();
-		     		XSSFSheet WsheetObj=WbookObj.createSheet("Result_Sheet");
-		     		XSSFRow FstRowObj=WsheetObj.createRow(0);
-		     		String[] ColmnArr={"Username","Login_Role", "Main_Menu_Item","Main_SubMainu_Item","Sub_Manu_Item","Page_Load_time","PageTitle","Actual_URL", "Status", "SnapshotLink" };
-		     		for(int i=0; i<=ColmnArr.length-1; i++){
-		     			XSSFCell CellObj=FstRowObj.createCell(i);
-		     			CellObj.setCellValue(ColmnArr[i]);
-		     			short colorindex=IndexedColors.YELLOW.getIndex();
-		     			short fontheight=13;
-		     			CellStyle StyleObj=fn_SetCellStyle(WbookObj, colorindex,fontheight);
-		     			CellObj.setCellStyle(StyleObj);
-		     			WsheetObj.autoSizeColumn(i);
-		     		}
-		     		String ResultFileName=Login_Role+"_Execution_Results";
-		     		  Date DTE=new Date();
-		     		 DateFormat DF=DateFormat.getDateTimeInstance();
-		     	String DateVal=DF.format(DTE);
-		     	DateVal=DateVal.replaceAll(":", "_");
-		     	    ResultFolder=ResultFolder+"/"+fn_GetLatestFolderName(ResultFolder);
-		     	    ResultSheetPath=ResultFolder+"/"+ResultFileName+".xlsx";
-		     		FileOutputStream FOS=new FileOutputStream(ResultSheetPath);
-		     		WbookObj.write(FOS);
-		     		FOS.close();
-		     		
-		     	}
+
+	 public static void fn_CreateAndFormatExcel() throws IOException{
+  		XSSFWorkbook WbookObj=new XSSFWorkbook();
+  		XSSFSheet WsheetObj=WbookObj.createSheet("Result_Sheet");
+  		XSSFRow FstRowObj=WsheetObj.createRow(0);
+  		String[] ColmnArr={"ModuleName","SubModuleName", "TestCaseName", "PageTitle","ObjectName","ExpectedValue", "ActualValue", "Status", "SnapshotLink" };
+  		for(int i=0; i<=ColmnArr.length-1; i++){
+  			XSSFCell CellObj=FstRowObj.createCell(i);
+  			CellObj.setCellValue(ColmnArr[i]);
+  			short colorindex=IndexedColors.BLUE.getIndex();
+  			short fontheight=13;
+  			CellStyle StyleObj=fn_SetCellStyle(WbookObj, colorindex,fontheight);
+  			CellObj.setCellStyle(StyleObj);
+  			WsheetObj.autoSizeColumn(i);
+  		}
+  		String ResultFileName=BrowserType+"_Execution_Results";
+  		  Date DTE=new Date();
+  		 DateFormat DF=DateFormat.getDateTimeInstance();
+  	String DateVal=DF.format(DTE);
+  	DateVal=DateVal.replaceAll(":", "_");
+  	    //ResultFolder=ResultFolder+"/"+fn_GetLatestFolderName(ResultFolder);
+  	    ResultSheetPath=ResultFolder+"/"+ResultFileName+".xlsx";
+  		FileOutputStream FOS=new FileOutputStream(ResultSheetPath);
+  		WbookObj.write(FOS);
+  		FOS.close();
+  		
+  	}
 			 public static void fn_UpdateExcelResults(String[] ArrValToWrite) throws IOException, InvalidFormatException{
 		     		FileInputStream FIS=new FileInputStream(ResultSheetPath);
 		     		Workbook WbookObj=WorkbookFactory.create(FIS);
@@ -337,7 +343,7 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 		     		
 		     		for(int i=0; i<=ArrValToWrite.length-1; i++){
 		     			Cell CellObj=RowObj.createCell(i);
-		     				if(ArrValToWrite[8].equalsIgnoreCase("Failed")){
+		     				if(ArrValToWrite[7].equalsIgnoreCase("Failed")){
 		     						CellStyle FailStyleObj=fn_SetCellStyle(WbookObj, IndexedColors.RED.getIndex(), (short)11);
 		     					    CellObj.setCellStyle(FailStyleObj);
 		     				}
@@ -360,11 +366,11 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
      
          if(ActualURL.contains(ExpectedValue)){
        	  Reporter.log("URL Verification Passed. Expected URL="+ExpectedValue+" Actual URL-"+ActualURL);
-       		String[] ResultArr=fn_CreateArray(ActualURL,"Working");
+       	String[] ResultArr=fn_CreateArray(ExpectedValue,ActualURL,"URL Validation","Passed");
            fn_WriteResultToExcel(ResultArr);
        		//System.out.println(ResultArr);
          }else{
-       		String[] ResultArr=fn_CreateArray(ActualURL,"Failed");
+        	 String[] ResultArr=fn_CreateArray(ExpectedValue,ActualURL,"URL Validation","Passed");
            	fn_WriteResultToExcel(ResultArr);
        		System.out.println(ResultArr);
              Assert.assertTrue(ResultAr, false);
@@ -394,29 +400,29 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 		    String ExpectedText=(String) testData_HM.get(ExpColumnName);
 		    if(ActualText.equalsIgnoreCase(ExpectedText)){
 		    	Reporter.log("Text Validation Passed. Expected Text="+ExpectedText+" Actual Text-"+ActualText);
-		    	String[] ResultArr=fn_CreateArray(ActualText,"Passed");
+		    	String[] ResultArr=fn_CreateArray(ExpectedText, ActualText, ObjName, "Pass");
 		    	fn_WriteResultToExcel(ResultArr);
 		    	System.out.println(ResultArr);
 		    }else{
 		   
 				String msg="Text Validation Failed. Expected Text="+ExpectedText+" Actual Text-"+ActualText;
-		    	String[] ResultArr=fn_CreateArray(ActualText,"Failed");
+		    	String[] ResultArr=fn_CreateArray(ExpectedText, ActualText, ObjName, "Pass");
 		    	//fn_WriteResultToExcel(ResultArr);
 		    	System.out.println(ResultArr);
 		    	 Assert.assertTrue(false);
 			}
 		}
-	 public  static  String fn_GetText(WebElement ElementToGetText) throws IOException, InvalidFormatException{
+	 public  static  String fn_GetText(WebElement ElementToGetText,String ExpectedText,String ObjName ) throws IOException, InvalidFormatException{
 		    String ActualText="";
 			try{
 			    ActualText=ElementToGetText.getText();
 			}catch(Exception e){	
 			}  if(ActualText==null){
-				//String[] textresult=fn_CreateArray("Text Not Found","Pass");
-				//fn_WriteResultToExcel(textresult);
+				String[] textresult=fn_CreateArray(ExpectedText,ActualText,ObjName,"Passed");
+				fn_WriteResultToExcel(textresult);
 			}else{
-		//String[] textresult=fn_CreateArray(ActualText,"Working");
-		//fn_WriteResultToExcel(textresult);
+		String[] textresult=fn_CreateArray(ExpectedText,ActualText,ObjName,"Passed");
+		fn_WriteResultToExcel(textresult);
 			}
 		return ActualText;
 	 }
@@ -475,12 +481,12 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 				} 
 		    if(ActualText.indexOf(ExpectedText.trim().toUpperCase())>-1){
 		    	Reporter.log("Passed. Expected Text Exist in Actual Text. Expected Text="+ExpectedText+" Actual Text-"+ActualText);
-		    	String[] ResultArr=fn_CreateArray(ActualText,"Passed");
+		    	String[] ResultArr=fn_CreateArray(ExpectedText,ActualText,ObjName,"Passed");
 				fn_WriteResultToExcel(ResultArr);
 		    }else{
 
 		    	String msg="Failed. Expected Text doesn't Exist in Actual Text. Expected Text="+ExpectedText+" Actual Text-"+ActualText;
-		    	String[] ResultArr=fn_CreateArray(ActualText,"Failed");
+		    	String[] ResultArr=fn_CreateArray(ExpectedText,ActualText,ObjName,"Passed");
 				fn_WriteResultToExcel(ResultArr);
 		    	Assert.assertTrue(msg,false);
 			}
@@ -489,11 +495,11 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 	 public  static void verifyTextExistance(String ActualText,String ExpectedText) throws IOException, InvalidFormatException{
 		    if(ActualText.indexOf(ExpectedText)>-1){
 		    	Reporter.log("Passed. Expected Text Exist in Actual Text. Expected Text="+ExpectedText+" Actual Text-"+ActualText);
-		    	String[] ResultArr=fn_CreateArray(ActualText,"Passed");
+		    	String[] ResultArr=fn_CreateArray(ExpectedText, ActualText, "", "Passed");
 				fn_WriteResultToExcel(ResultArr);
 		    }else{
 		    	String msg="Failed. Expected Text doesn't Exist in Actual Text. Expected Text="+ExpectedText+" Actual Text-"+ActualText;
-		    	String[] ResultArr=fn_CreateArray(ActualText,"Failed");
+		    	String[] ResultArr=fn_CreateArray(ExpectedText, ActualText, "", "Passed");
 				fn_WriteResultToExcel(ResultArr);
 		    	Assert.assertTrue(msg,false);
 			}
@@ -590,8 +596,8 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
     	         }
     	   //return AL;   
     	  }
-	  public  static void fn_Upload_HandleAutoIT(String fileName) throws Exception{
-			if(Login_Role.equalsIgnoreCase("FF")){
+	  public  static void fn_Upload_HandleAutoIT(String fileName, String browsername) throws Exception{
+			if(browsername.equalsIgnoreCase("FF")){
 				File ExeFilePath= new File("autoit\\FF_FileAutoIT\\Upload_Dialog_FF.exe");
 				String ExePath=ExeFilePath.getAbsolutePath();
 				File file = new File("Files\\Upload\\"+fileName);
@@ -599,7 +605,7 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 			    String[] DialagText={ExePath,filePath};
 				Process process = Runtime.getRuntime().exec(DialagText);
 				process.waitFor();
-			}else if(Login_Role.equalsIgnoreCase("CH")){
+			}else if(browsername.equalsIgnoreCase("CH")){
 				File ExeFilePath= new File("autoit\\CH_FileAutoIT\\Upload_Dialog_CH.exe");
 				String ExePath=ExeFilePath.getAbsolutePath();
 				File file = new File("Files\\Upload\\"+fileName);
@@ -607,7 +613,7 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 			    String[] DialagText={ExePath,filePath};
 				Process process = Runtime.getRuntime().exec(DialagText);
 				process.waitFor();
-			}else if(Login_Role.equalsIgnoreCase("IE")){
+			}else if(browsername.equalsIgnoreCase("IE")){
 				File ExeFilePath= new File("autoit\\IE_FileAutoIT\\Upload_Dialog_IE.exe");
 				String ExePath=ExeFilePath.getAbsolutePath();
 				File file = new File("Files\\Upload\\"+fileName);
@@ -618,8 +624,8 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 		  }
 		}
 	  
-	  public  static void fn_Export_HandleAutoIT(String fileName) throws Exception{ ///Method for autoIT
-			if(Login_Role.equalsIgnoreCase("FF")){
+	  public  static void fn_Export_HandleAutoIT(String fileName,String Browsername) throws Exception{ ///Method for autoIT
+			if(Browsername.equalsIgnoreCase("FF")){
 				File file = new File("Files\\Download\\"+fileName);
 				String filePath=file.getAbsolutePath();
 				File ExeFilePath= new File("autoit\\FF_FileAutoIT\\Save_Dialog_FF.exe");
@@ -628,7 +634,7 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 			    Thread.sleep(2000);
 				Process process = Runtime.getRuntime().exec(DialagText);
 				process.waitFor();
-			}else if(Login_Role.equalsIgnoreCase("CH")){
+			}else if(Browsername.equalsIgnoreCase("CH")){
 //				File file = new File("Files\\Download\\"+fileName);
 //				String filePath=file.getAbsolutePath();
 //				File ExeFilePath= new File("autoit\\CH_FileAutoIT\\Save_Dialog_CH.exe");
@@ -636,7 +642,7 @@ public static void fn_DoubleMouseOverClick(WebDriver DriverObj, WebElement First
 //			    String[] DialagText={ExePath,"Opening DemodOnDemand", "OK", filePath};
 //				Process process = Runtime.getRuntime().exec(DialagText);
 //				process.waitFor();
-			}else if(Login_Role.equalsIgnoreCase("IE")){
+			}else if(Browsername.equalsIgnoreCase("IE")){
 				File file = new File("Files\\Download\\"+fileName);
 				String filePath=file.getAbsolutePath();
 				File ExeFilePath= new File("autoit\\IE_FileAutoIT\\Save_Dialog_IE.exe");
@@ -797,6 +803,23 @@ public static  void verifyimageActive(WebElement imgElement) {
     	}
     	
     	}
+    public static void fn_takeScreenShotOnFailure() throws IOException { 
+    	int Result=Reporter.getCurrentTestResult().getStatus();
+    	if (ITestResult.FAILURE== Result) {
+    		System.out.println(Result);
+    		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+    		String snapshotpath=ResultFolder+"/snapshots/"+"Image_"+fn_GetTimeStamp()+".jpg";
+ 		String snapshotForXL="snapshots/"+"Image_"+fn_GetTimeStamp()+".jpg";
+ 		File destfileObj=new File(snapshotpath);
+ 		FileUtils.copyFile(scrFile, destfileObj);
+ 		
+        }
+    	
+     }
+    public static int fn_getTestResult(){
+    	int Result=Reporter.getCurrentTestResult().getStatus();
+    	return Result;
+    }
     
 }
 

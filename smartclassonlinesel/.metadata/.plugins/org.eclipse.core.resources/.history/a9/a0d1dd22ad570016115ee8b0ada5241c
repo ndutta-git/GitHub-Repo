@@ -1,0 +1,7 @@
+package com.appmodule.testscript;
+
+import com.appmodule.Generic_method.Generic_class;
+
+public class ShareModuleTestScript extends Generic_class {
+
+}

@@ -1,0 +1,54 @@
+package com.appmodule.testscript;
+
+import org.apache.log4j.xml.DOMConfigurator;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.appmodule.Generic_method.Generic_class;
+import com.appmodule.Generic_method.Log;
+import com.appmodule.homepageclass.HomePage_PagecClass;
+import com.appmodule.homepageclass.IndexHomePage_PageClass;
+import com.appmodule.homepageclass.Loginpage_Pageclass;
+import com.appmodule.share_PageClass.Wall_PageClass;
+
+public class WallPost_TestScript extends Generic_class {
+		
+		public static String Upload_file_Name="";
+		public static String Upload_file_Path="";
+		
+		static{
+			DOMConfigurator.configure("log4j.xml");
+			Log.startTestCase("Create Wall Post");
+		}
+		
+		@BeforeTest
+		public static void login() throws Exception{
+			fn_OpenApp("CH", "http://www.fliplearn.com");
+			Log.info("Appliaction Open");
+			HomePage_PagecClass.clickonloginbutton();
+			Log.info("Login Page Open");
+			Loginpage_Pageclass.login();
+			Log.info("User Sccessfully login");
+		}
+		@Test(priority=1)
+		public static void createWall() throws Exception{
+			IndexHomePage_PageClass.clickOnWall();
+			Log.info("Wall Psot Page Is open");
+			Thread.sleep(2000);
+			Wall_PageClass.createWallPost();
+			Log.info("Wall post Successfully created");
+		}
+		@Test(priority=2)
+		public static void verifyWallPost(){
+			
+		}
+		@AfterTest
+		public static void logout() throws Exception{
+			IndexHomePage_PageClass.fn_logout();
+			Log.info("User Successfully logout");
+			DriverObj.close();
+			Log.info("Browser Cloased");
+			DriverObj.quit();
+		}
+}

@@ -1,0 +1,6 @@
+WinActivate($CmdLine[1])
+Sleep(1000)
+Send("!s")
+Sleep(1000)
+Send("{ENTER}")
+Sleep (5000)

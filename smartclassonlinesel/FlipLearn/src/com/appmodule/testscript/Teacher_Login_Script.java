@@ -49,7 +49,7 @@ public static void closebrowser(){
 	}
 @Test(priority=1)
 public static void click_on_Wall() throws Exception, IOException{
-	IndexHomePage_PageClass.Clickonwalllink();
+	IndexHomePage_PageClass.clickOnWall();
 	Thread.sleep(2000);
 	verifyUrl("WallPage_Url", 1);
 	fn_GetPageLoadTime(IndexHomePage_PageClass.walllogo_onmain);
@@ -66,7 +66,7 @@ public static void Click_on_Message() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=3)
 public static void Click_on_Gallery() throws IOException, Exception{
-	IndexHomePage_PageClass.Clickongallerylink();
+	IndexHomePage_PageClass.clickOnGallery();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Gallery);
 	verifyUrl("GalleryPage_Url", 1);
@@ -74,7 +74,7 @@ public static void Click_on_Gallery() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=4)
 public static void Clcik_on_Event() throws IOException, Exception{
-	IndexHomePage_PageClass.Clickonevent();
+	IndexHomePage_PageClass.clickOnEvent();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Events);
 	verifyUrl("EventPage_Url", 1);
@@ -82,7 +82,7 @@ public static void Clcik_on_Event() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=5)
 public static void Click_on_Announcement() throws IOException, Exception{
-	IndexHomePage_PageClass.Clickonannouncement();
+	IndexHomePage_PageClass.clickOnAnnouncement();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Announcements);
 	verifyUrl("TeacherAnnouncementPage_URL", 1);
@@ -90,7 +90,7 @@ public static void Click_on_Announcement() throws IOException, Exception{
 @SuppressWarnings("static-access")
 @Test(priority=6)
 public static void Click_on_Student() throws Exception, IOException{
-	IndexHomePage_PageClass.Clickonstudent();
+	IndexHomePage_PageClass.clickOnStudent();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Students);
 	verifyUrl("StudentPage_URL", 1);
@@ -98,7 +98,7 @@ public static void Click_on_Student() throws Exception, IOException{
 @SuppressWarnings("static-access")
 @Test
 public static void Click_on_Teacher() throws IOException, Exception{
-	IndexHomePage_PageClass.ClickonTeacher();
+	IndexHomePage_PageClass.clickOnTeacher();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Teachers);
 	Thread.sleep(2000);
@@ -115,7 +115,8 @@ public static void Click_on_AttendanceMarks() throws Exception{
 @SuppressWarnings("static-access")
 @Test(priority=8)
 public static void Click_on_AttendanceReport() throws Exception{
-     Perform_PageClass.ClickonAttendance_Report();
+	IndexHomePage_PageClass Atendance=PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
+	Atendance.ClickonAttendance_Report();
      Thread.sleep(2000);
      fn_GetPageLoadTime(NavigationObj.attendance_report);
 	verifyUrl("AttendanceReport_URL", 1);
@@ -123,7 +124,8 @@ public static void Click_on_AttendanceReport() throws Exception{
 @SuppressWarnings("static-access")
 @Test(priority=9)
 public static void Click_on_PerformAssignment() throws Exception, IOException{
-	Perform_PageClass.ClickonPerformAssignment();
+	IndexHomePage_PageClass PerformAssignment=PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
+	PerformAssignment.ClickonPerformAssignment();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.Homework_logo);
 	verifyUrl("PerformAssignmentPage_URL", 1);
@@ -131,7 +133,8 @@ public static void Click_on_PerformAssignment() throws Exception, IOException{
 @SuppressWarnings("static-access")
 @Test(priority=10)
 public static void Click_on_MarksReview() throws Exception{
-	Perform_PageClass.Clickonmarksreview();
+	IndexHomePage_PageClass MarksReview=PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
+	MarksReview.Clickonmarksreview();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.marks_review);
 	verifyUrl("MarksReviewPage_URL",1);
@@ -139,7 +142,8 @@ public static void Click_on_MarksReview() throws Exception{
 @SuppressWarnings("static-access")
 @Test(priority=11)
 public static void Click_on_MarksreviewreportClasswise() throws Exception{
-	Perform_PageClass.Clickonmarksreviewreportclasswise();
+	IndexHomePage_PageClass MarksreviewreportClasswise=PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
+	MarksreviewreportClasswise.Clickonmarksreviewreportclasswise();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.marks_review_reportclasswise);
 	verifyUrl("MarksReportClassWise_URL", 1);
@@ -147,7 +151,8 @@ public static void Click_on_MarksreviewreportClasswise() throws Exception{
 @SuppressWarnings("static-access")
 @Test(priority=12)
 public static void Click_on_HealthStatus() throws Exception, IOException{
-	Perform_PageClass.ClickonHealthstatus();
+	IndexHomePage_PageClass HealthStatus=PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
+	HealthStatus.ClickonHealthstatus();
 	Thread.sleep(2000);
 	fn_GetPageLoadTime(NavigationObj.health_status);
 	verifyUrl("HealthSatatusPage_URL", 1);

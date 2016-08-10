@@ -1,0 +1,166 @@
+package com.appmodule.share_PageClass;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.appmodule.Generic_method.Generic_class;
+
+public class Message_Pageclass extends Generic_class{
+	
+	public  String message_subject="New message using selenium webdriver"; 
+	public  String message_discription="New message using selenium webdriver"; 
+	
+	
+	@FindBy(xpath="//h3[text()='Messages']")
+	public static WebElement messageheaderlogo;
+	
+	@FindBy(xpath="//a[@href='/index.php/messages/create']")
+	public static WebElement new_message_button;
+	
+	@FindBy(id="send_msg")
+	public static WebElement send_button;
+	
+	@FindBy(xpath="//a[@class='discard btn']")
+	public static WebElement discard_button;
+	
+	
+	@FindBy(xpath="//div[@class='form-row row-fluid']/div/div/a")
+	public static WebElement select_recipients_button;
+	
+	@FindBy(id="Messages_msg_subject")
+	public static WebElement subject_textbox;
+	
+	@FindBy(id="Messages_msg_body_ifr")
+	public static WebElement message_discription_iframe;
+	
+	@FindBy(css="input[type=file]")
+	public static WebElement Upload_button;
+	
+	@FindBy(id="uniform-Messages_send_email")
+	public static WebElement Send_email_checkbox;
+	
+	@FindBy(id="Messages_send_sms")
+	public static WebElement send_sms_checkbox;
+	
+	@FindBy(id="Messages_smstxt")
+	public static WebElement SMS_description_textbox;
+	
+	@FindBy(xpath="//*[@id='tinymce']/p")
+	public static WebElement message_description_textbox;
+	
+	@FindBy(id="fancybox-frame1470113540904")
+	public static WebElement select_recipient_iframe;
+	
+	@FindBy(xpath="//div[@id='searched_content']/span")
+	public static WebElement recipient_button;
+	
+	@FindBy(xpath="//div[@id='searched_content']/span")
+	public static WebElement recipient_class;
+	
+	@FindBy(xpath="//a[@class='btn right address_btn btn']")
+	public static WebElement done_button;
+	
+	@FindBy(xpath="//a[@class='fancybox-item fancybox-close']")
+	public static WebElement close_button;
+	
+	
+	@FindBy(xpath="//div[@class='content']/div[3]/a")
+	public static WebElement sent_button;
+	
+	@FindBy(xpath="//div[@id='menutour']//li/a[text()='Share']")
+	public static WebElement share_menu;
+	
+	@FindBy(xpath="//a[@href='/index.php/messages']/span")
+	public static WebElement Message_Text;
+	
+	@FindBy(xpath="//a[@href='/index.php/messages']")
+	public static WebElement message_link;
+	
+/*******************************************************************************************************************/ 
+
+	 public static Message_Pageclass clickOnMessage() throws Exception{
+		   fn_MouseOver(DriverObj, share_menu);
+		   Main_Manu_Item=fn_GetText(share_menu);
+		   Thread.sleep(2000);
+		   Sub_Manu_Item=fn_GetText(Message_Text);
+		   fn_mouseOverClick(DriverObj, share_menu, message_link);
+		   Message_Pageclass MessagePageClass=PageFactory.initElements(DriverObj, Message_Pageclass.class);
+		   return MessagePageClass;
+	   }
+	
+    public static  void clickOnNewMessage(){
+		try{
+			fn_SimpleClick(new_message_button);
+		}catch(Exception e){
+			fn_SimpleClick(new_message_button);
+			}
+	}
+	public void clickOnSelectRecipient(){
+		try{
+			fn_SimpleClick(select_recipients_button);
+		}catch(Exception e){
+			DriverObj.navigate().refresh();
+			fn_SimpleClick(select_recipients_button);
+		}
+	}
+	public static void selectContact(){
+		try{
+			DriverObj.switchTo().frame(select_recipient_iframe);
+			fn_SimpleClick(recipient_class);
+		}catch(Exception e){
+			DriverObj.navigate().refresh();
+			DriverObj.switchTo().frame(select_recipient_iframe);
+			fn_SimpleClick(recipient_class);
+		}
+	}
+	public static void clickOnDoneButton(){
+		try{
+			fn_SimpleClick(done_button);
+		}catch(Exception e){
+			DriverObj.navigate().refresh();
+			fn_SimpleClick(done_button);
+		}
+	}
+	public static void fillMessageSubject(){
+		try{
+			fn_Input(subject_textbox, message_subject);
+		}catch(Exception e){
+			DriverObj.navigate().refresh();
+			fn_Input(subject_textbox,message_subject);
+		}
+	}
+	public static void fillDescription(){
+		try{
+			fn_Input(message_description_textbox, message_discription);
+		}catch(Exception e){
+			DriverObj.navigate().refresh();
+			fn_Input(message_description_textbox, message_discription);
+		}
+	}
+	public static void uploadFile(){
+		try{
+			fn_SimpleClick(Upload_button);
+		}catch(Exception e){
+			DriverObj.navigate().refresh();
+			fn_SimpleClick(Upload_button);
+		}
+	}
+	public void clickOnSentButton(){
+		try{
+			fn_SimpleClick(sent_button);
+		}catch(Exception e){
+			DriverObj.navigate().refresh();
+			fn_SimpleClick(sent_button);
+		}
+	}
+	public void clickonSendButton(){
+		try{
+			fn_SimpleClick(send_button);
+		}catch(Exception e){
+			DriverObj.navigate().refresh();
+			fn_SimpleClick(send_button);
+		}
+	}
+	
+}

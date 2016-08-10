@@ -1,0 +1,78 @@
+package com.appmodule.share_PageClass;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.appmodule.Generic_method.Generic_class;
+
+public class Wall_PageClass extends Generic_class{
+	
+	static{
+	TestDataPath="TestData/Share module test data/Share module test data.xlsx";
+	TestDataSheetName="Test Data";
+	ResultSheetPath="FlipLearn/Results/Result.xlsx";
+	ResultFolder="C:/Users/ykuld_000/Desktop/smartclassonlinesel/FlipLearn/Results";
+	try {
+		fn_FetchExcelData(1);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	}
+	
+	@FindBy(css="//h3[text()='Wall']")
+	public static WebElement wall_logo;
+	
+	@FindBy(xpath="//a[@href='/index.php/wallPosts']")
+	public static WebElement Wall_link;
+	
+	@FindBy(id="post_body_ifr")
+	public static WebElement Wall_desc_ifrmae;
+	
+	@FindBy(xpath="//body[@id='tinymce']/p")
+	public static WebElement Wall_post_description;
+	
+	@FindBy(css="div.container>ul>li>a:contains('Share')")
+	public static WebElement Share;
+	
+	@FindBy(css="input.btn.btn-primary")
+	public static WebElement Post_Button;
+	
+	@FindBy(css="input[type=file]")
+	public static WebElement Browse_file_button;
+	
+	
+	public static void ClickonWall() throws Exception{
+		try{
+			fn_MouseOver(DriverObj, Share);
+			fn_SimpleClick(Wall_link);
+		}catch(Exception e){
+			Thread.sleep(3000);
+			fn_MouseOver(DriverObj, Share);
+			fn_SimpleClick(Wall_link);
+			e.printStackTrace();
+		}
+	}
+	public static void createwallpost() throws Exception{
+		try{
+			DriverObj.switchTo().frame(Wall_desc_ifrmae);
+			fn_Inputexcel(Wall_post_description, "Wall Post test data");
+			fn_SimpleClick(Browse_file_button);
+			fn_uploadFile("4-Nature-Wallpapers-2014-1.jpg", "TestData/Test File");
+			fn_SimpleClick(Post_Button);
+		}catch(Exception e){
+			DriverObj.navigate().refresh();
+			DriverObj.switchTo().frame(Wall_desc_ifrmae);
+			DriverObj.switchTo().frame(Wall_desc_ifrmae);
+			fn_Inputexcel(Wall_post_description, "Wall Post test data");
+			fn_SimpleClick(Browse_file_button);
+			fn_uploadFile("4-Nature-Wallpapers-2014-1.jpg", "TestData/Test File");
+			fn_SimpleClick(Post_Button);
+		}
+	}
+	public static void vrifyCreatedWallPost(){
+		
+	}
+}

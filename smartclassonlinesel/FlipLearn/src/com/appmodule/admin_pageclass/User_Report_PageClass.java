@@ -71,5 +71,10 @@ public class User_Report_PageClass extends Generic_class{
 		Add_Teacher_PageClass  addteacherobj=PageFactory.initElements(DriverObj, Add_Teacher_PageClass.class);
 	    return addteacherobj;
 	}
-	
+	public static Add_Student_PageClass clickOnStudent(){
+		fn_SimpleClick(addstudent);
+		Add_Student_PageClass addstudentobj=PageFactory.initElements(DriverObj, Add_Student_PageClass.class);
+		return addstudentobj;
+		
+	}
 }

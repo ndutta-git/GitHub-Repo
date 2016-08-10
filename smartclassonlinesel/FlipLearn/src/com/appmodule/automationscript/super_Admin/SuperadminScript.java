@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 import com.appmodule.Generic_method.Generic_class;
 import com.appmodule.homepageclass.HomePage_PagecClass;
 import com.appmodule.homepageclass.Loginpage_Pageclass;
@@ -18,6 +19,7 @@ public class SuperadminScript extends Generic_class{
 	@SuppressWarnings("rawtypes")
 	public static HashMap testData_HM =new HashMap();
 	
+	@SuppressWarnings("static-access")
 	@BeforeTest
 	
 	public static void loginapp() throws Exception{

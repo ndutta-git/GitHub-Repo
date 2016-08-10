@@ -1,0 +1,30 @@
+package com.appmodule.testscript;
+
+import java.io.IOException;
+
+import org.apache.log4j.Logger;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.appmodule.Generic_method.Generic_class;
+import com.appmodule.homepageclass.HomePage_PagecClass;
+import com.appmodule.homepageclass.IndexHomePage_PageClass;
+import com.appmodule.homepageclass.Loginpage_Pageclass;
+import com.appmodule.share_PageClass.Wall_PageClass;
+
+public class ShareModuleTestScript extends Generic_class {
+		
+		@BeforeTest
+		public static void login() throws InvalidFormatException, IOException, InterruptedException{
+			
+		}
+		@SuppressWarnings("static-access")
+		@Test(priority=1)
+		public static void createWall() throws Exception{
+			Wall_PageClass wallpostpage=PageFactory.initElements(DriverObj, Wall_PageClass.class);
+			Thread.sleep(3000);
+			wallpostpage.createwallpost();
+		}
+}

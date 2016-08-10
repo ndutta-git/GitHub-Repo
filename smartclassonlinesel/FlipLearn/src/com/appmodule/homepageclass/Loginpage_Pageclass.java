@@ -32,7 +32,7 @@ public class Loginpage_Pageclass extends Generic_class{
 	     Login_Role= (String) testData_HM.get("User_Role_ED");
 	    fn_Inputexcel(username, "UserName_Ed");
 		fn_Inputexcel(password, "Password_Ed");
-		Main_Manu_Item=fn_GetText(loginbutton);
+		
 		fn_SimpleClick(loginbutton);
 		Thread.sleep(2000);
 		IndexHomePage_PageClass indexhomepage=	(IndexHomePage_PageClass) PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
@@ -47,7 +47,7 @@ public class Loginpage_Pageclass extends Generic_class{
 		 Login_Role= (String) testData_HM.get("User_Role_ED");
 		fn_Inputexcel(username, "UserName_Ed");
 		fn_Inputexcel(password, "Password_Ed");
-		fn_GetText(loginbutton);
+		fn_GetText(loginbutton, "Login", "Login Button");
 		fn_SimpleClick(loginbutton);
 		Thread.sleep(2000);
 		IndexHomePage_PageClass indexhomepage=	(IndexHomePage_PageClass) PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
@@ -61,7 +61,7 @@ public class Loginpage_Pageclass extends Generic_class{
 		 Login_Role= (String) testData_HM.get("User_Role_ED");
 		fn_Inputexcel(username, "UserName_Ed");
 		fn_Inputexcel(password, "Password_Ed");
-		fn_GetText(loginbutton);
+		fn_GetText(loginbutton, "Login", "Login Button");
 		fn_SimpleClick(loginbutton);
 		Thread.sleep(2000);
 		IndexHomePage_PageClass indexhomepage=	(IndexHomePage_PageClass) PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
@@ -75,7 +75,7 @@ public class Loginpage_Pageclass extends Generic_class{
 		 Login_Role= (String) testData_HM.get("User_Role_ED");
 		fn_Inputexcel(username, "UserName_Ed");
 		fn_Inputexcel(password, "Password_Ed");
-		fn_GetText(loginbutton);
+		fn_GetText(loginbutton, "Login", "Login Button");
 		fn_SimpleClick(loginbutton);
 		Thread.sleep(2000);
 		IndexHomePage_PageClass indexhomepage=	(IndexHomePage_PageClass) PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
@@ -89,10 +89,21 @@ public class Loginpage_Pageclass extends Generic_class{
 		 Login_Role= (String) testData_HM.get("User_Role_ED");
 		fn_Inputexcel(username, "UserName_Ed");
 		fn_Inputexcel(password, "Password_Ed");
-		fn_GetText(loginbutton);
+		fn_GetText(loginbutton, "Login", "Login Button");
 		fn_SimpleClick(loginbutton);
 		Thread.sleep(2000);
 		IndexHomePage_PageClass indexhomepage=	(IndexHomePage_PageClass) PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
 		 return indexhomepage;
 	}
+	public static IndexHomePage_PageClass login() throws Exception{
+		TestDataPath="TestData/LoginData/General_login_ID.xlsx";
+	    TestDataSheetName="Login data";
+	    fn_FetchExcelData(1);
+	    fn_Inputexcel(username,"Login_ID");
+	    fn_Inputexcel(password, "Password");
+	    fn_SimpleClick(loginbutton);
+	    IndexHomePage_PageClass indexhomepage=  PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
+	    return indexhomepage;
+	}
+	
 }

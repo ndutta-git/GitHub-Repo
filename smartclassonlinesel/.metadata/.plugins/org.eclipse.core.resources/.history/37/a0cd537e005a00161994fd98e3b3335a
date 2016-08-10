@@ -1,0 +1,68 @@
+package com.appmodule.testscript;
+
+import java.io.IOException;
+
+import org.apache.log4j.xml.DOMConfigurator;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.appmodule.Generic_method.Generic_class;
+import com.appmodule.Generic_method.Log;
+import com.appmodule.homepageclass.HomePage_PagecClass;
+import com.appmodule.homepageclass.IndexHomePage_PageClass;
+import com.appmodule.homepageclass.Loginpage_Pageclass;
+
+public class Event_testscript extends Generic_class{
+	
+	public static String Upload_file_Name="";
+	public static String Upload_file_Path="";
+	
+	
+	static{
+		DOMConfigurator.configure("log4j.xml");
+		Log.startTestCase("Create Wall Post");
+		TestDataPath="TestData/LoginData/URL_Sheet.xlsx";
+		TestDataSheetName="URL_Sheet_of_App";
+		ResultSheetPath="FlipLearn/Results/Result.xlsx";
+		ResultFolder="E:/Git-Repository/scoselenium/smartclassonlinesel/FlipLearn/Results";
+		try {
+			fn_FetchExcelData(1);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@BeforeTest
+	public static void login() throws Exception{
+		fn_OpenApp("CH", "http://www.fliplearn.com");
+		verifyUrl("App_Launch_URL", 1);
+		verifyVisible(HomePage_PagecClass.Fliplearn_logo, "FLiplearn Home page Logo");
+		Log.info("Appliaction Open");
+		HomePage_PagecClass.clickonloginbutton();
+		verifyUrl("Login_page_URL", 1);
+		verifyVisible(Loginpage_Pageclass.loginbutton, "Login Button");
+		Log.info("Login Page Open");
+		Loginpage_Pageclass.login();
+		verifyUrl("IndexWall_page_URL", 1);
+		verifyVisible(IndexHomePage_PageClass.Fliplearn_logo_on_Wall, "Fliplearn logo");
+		Log.info("User Sccessfully login");
+	}
+	@Test(priority=1)
+	public static void createWall() throws Exception{
+		
+	}
+	@Test(priority=2)
+	public static void verifyWallPost(){
+		
+	}
+	@AfterTest
+	public static void logout() throws Exception{
+		IndexHomePage_PageClass.fn_logout();
+		Log.info("User Successfully logout");
+		DriverObj.close();
+		Log.info("Browser Cloased");
+		DriverObj.quit();
+	}
+}

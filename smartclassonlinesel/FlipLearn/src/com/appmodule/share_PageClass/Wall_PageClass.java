@@ -2,12 +2,15 @@ package com.appmodule.share_PageClass;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import com.appmodule.Generic_method.Generic_class;
 
 public class Wall_PageClass extends Generic_class{
-
-	@FindBy(xpath="//h3[text()='Wall']")
+		
+	public static String Wall_post_Description="Wall Post Using Selenium";
+	public static String filename="4-Nature-Wallpapers-2014-1.jpg";
+	public static String filepath="TestData/Test File/4-Nature-Wallpapers-2014-1.jpg";
+	
+	@FindBy(css="//h3[text()='Wall']")
 	public static WebElement wall_logo;
 	
 	@FindBy(xpath="//a[@href='/index.php/wallPosts']")
@@ -19,9 +22,24 @@ public class Wall_PageClass extends Generic_class{
 	@FindBy(xpath="//body[@id='tinymce']/p")
 	public static WebElement Wall_post_description;
 	
+	@FindBy(css="div.container>ul>li>a:contains('Share')")
+	public static WebElement Share;
 	
-	@FindBy(xpath="//div[@class='span2']/input")
+	@FindBy(css="input.btn.btn-primary")
 	public static WebElement Post_Button;
 	
+	@FindBy(css="input[type=file]")
+	public static WebElement Browse_file_button;
+	
+	public static void createWallPost() throws Exception{
+		    //DriverObj.switchTo().frame(Wall_desc_ifrmae);
+		    //fn_Input(Wall_post_description, Wall_post_Description);
+		    fn_SimpleClick(Browse_file_button);
+		    Thread.sleep(2000);
+		    fn_Upload_HandleAutoIT("4-Nature-Wallpapers-2014-1.jpg", "CH");
+		    Thread.sleep(2000);
+		    fn_SimpleClick(Post_Button);
+		    DriverObj.navigate().refresh();
+	}
 	
 }

@@ -18,7 +18,6 @@ import com.appmodule.homepageclass.IndexHomePage_PageClass;
 import com.appmodule.homepageclass.Loginpage_Pageclass;
 import com.appmodule.perform_pageclass.Attendance_PageClass;
 import com.appmodule.perform_pageclass.HomeWork_PageClass;
-import com.appmodule.perform_pageclass.Perform_PageClass;
 
 public class Admin_Login_Script extends Generic_class{
 
@@ -32,7 +31,7 @@ public class Admin_Login_Script extends Generic_class{
 		TestDataPath="TestData/LoginData/url_excel.xlsx";
 		TestDataSheetName="URL";
 		Login_Role="Admin";
-		ResultSheetPath="FlipLearn/Results/Result.xlsx";
+		ResultSheetPath="FlipLearn/Results/Admin_Login_Script.xlsx";
 		ResultFolder="E:/Git-Repository/scoselenium/smartclassonlinesel/FlipLearn/Results";
 		
 	    HomePage_PagecClass	loginpageobj=fn_OpenApp("CH", "http://www.fliplearn.com");
@@ -61,7 +60,7 @@ public class Admin_Login_Script extends Generic_class{
    
 	@Test(priority=1)
 	public static void Click_on_Wall() throws IOException, Exception{
-    	IndexHomePage_PageClass.Clickonwalllink();
+    	IndexHomePage_PageClass.clickOnWall();
 	fn_GetPageLoadTime(IndexHomePage_PageClass.walllogo_onmain);
 	verifyUrl("WallPage_Url", 1);
     }
@@ -69,7 +68,7 @@ public class Admin_Login_Script extends Generic_class{
 	@SuppressWarnings("static-access")
 	@Test(priority=2)
     public static void Click_on_Message() throws IOException, Exception{
-    IndexHomePage_PageClass.clickOnMessage();
+		IndexHomePage_PageClass.clickOnMessage();
     	fn_GetPageLoadTime(NavigationObj.MessageLogo);
     	verifyUrl("MessagePage_Url", 1);
     }
@@ -77,7 +76,7 @@ public class Admin_Login_Script extends Generic_class{
 	@SuppressWarnings("static-access")
 	@Test(priority=3)
     public static void Click_on_Gallery() throws IOException, Exception{
-    	IndexHomePage_PageClass.Clickongallerylink();
+    	IndexHomePage_PageClass.clickOnGallery();
     	fn_GetPageLoadTime(NavigationObj.Gallery);
     	verifyUrl("GalleryPage_Url", 1);
     }
@@ -85,7 +84,7 @@ public class Admin_Login_Script extends Generic_class{
 	@SuppressWarnings("static-access")
 	@Test(priority=4)
     public static void Click_on_Events() throws IOException, Exception{
-    	IndexHomePage_PageClass.Clickonevent();
+    	IndexHomePage_PageClass.clickOnEvent();
     	fn_GetPageLoadTime(NavigationObj.Events);
     	verifyUrl("EventPage_Url", 1);
     }
@@ -93,7 +92,7 @@ public class Admin_Login_Script extends Generic_class{
 	@SuppressWarnings("static-access")
 	@Test(priority=5)
     public static void Click_on_Announcement() throws IOException, Exception{
-    	IndexHomePage_PageClass.Clickonannouncement();
+    	IndexHomePage_PageClass.clickOnAnnouncement();
     	fn_GetPageLoadTime(NavigationObj.Announcements);
     	verifyUrl("Adminannouncement_URL", 1);
     }
@@ -101,7 +100,7 @@ public class Admin_Login_Script extends Generic_class{
 	@SuppressWarnings("static-access")
 	@Test(priority=6)
     public static void Click_on_Student() throws IOException, Exception{
-    IndexHomePage_PageClass.Clickonstudent();
+    IndexHomePage_PageClass.clickOnStudent();
     	fn_GetPageLoadTime(NavigationObj.Students);
     	verifyUrl("StudentPage_URL", 1);
     }
@@ -109,21 +108,23 @@ public class Admin_Login_Script extends Generic_class{
 	@SuppressWarnings("static-access")
 	@Test(priority=7)
     public static void Click_on_Teacher() throws IOException, Exception{
-    	IndexHomePage_PageClass.ClickonTeacher();
+    	IndexHomePage_PageClass.clickOnTeacher();
     	fn_GetPageLoadTime(NavigationObj.Teachers);
     	verifyUrl("TeacherPage_URL", 1);
     }
     @SuppressWarnings({ "static-access", "unused" })
 	@Test(priority=9)
     public static void Click_on_Attendance() throws InvalidFormatException, IOException{
-    	Attendance_PageClass AttendancePage=Perform_PageClass.clickonattendance();
+    	IndexHomePage_PageClass perform=PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
+    	Attendance_PageClass AttendancePage=perform.clickonattendance();
     	fn_GetPageLoadTime(NavigationObj.mark_Attendance);
     	verifyUrl("AdminAttendance_URL", 1);
     }
     
     @SuppressWarnings({ "unused", "static-access" })
 	public static void Click_on_Homework() throws IOException, Exception{
-    	HomeWork_PageClass HomeworkPage=Perform_PageClass.ClickOnHomework();
+    	IndexHomePage_PageClass perform=PageFactory.initElements(DriverObj, IndexHomePage_PageClass.class);
+    	HomeWork_PageClass HomeworkPage=perform.ClickOnHomework();
     	fn_GetPageLoadTime(NavigationObj.Homework_logo);
     }
     @SuppressWarnings({ "static-access", "unused" })

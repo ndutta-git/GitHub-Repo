@@ -1,0 +1,16 @@
+package com.appmodule.testscript;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.appmodule.Generic_method.Generic_class;
+import com.appmodule.share_PageClass.Wall_PageClass;
+
+public class ShareModuleTestScript extends Generic_class {
+	
+		@Test(priority=1)
+		public static void createWall() throws Exception{
+			Wall_PageClass wallpostpage=PageFactory.initElements(DriverObj, Wall_PageClass.class);
+			wallpostpage.createwallpost();
+		}
+}

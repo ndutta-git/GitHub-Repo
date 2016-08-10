@@ -2,12 +2,17 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="marksre" key="selection"/>
+		<item value="fn_TakeSnapshot()" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="fn_TakeSnapshot()"/>
+			<item value="fn_SetFontStyle"/>
+			<item value="fn_SetCellStyle"/>
+			<item value="fn_GetLatestFolderName"/>
+			<item value="Fn_getfolder"/>
 			<item value="marksre"/>
 			<item value="fn_CreateAndFormatExcel"/>
 		</list>
